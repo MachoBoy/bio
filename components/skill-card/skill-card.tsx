@@ -67,18 +67,19 @@ const SkillCard = () => {
     <div className='skill-card-container flex justify-center flex-row flex-wrap h-fit'>
       {skillCardItem.map((item, index) => (
         <div
-          className='w-56 h-44 rounded-xl bg-card-bg hover:bg-purple-400 m-2 p-3 flex justify-center items-start shadow-md hover:shadow-lg transition-all'
+          className='flex-col xl:w-48 lg:w-44 md:w-32 md:h-36 sm:w-28 sm:h-28 rounded-xl bg-card-bg hover:bg-purple-400 m-2 p-3 flex justify-center items-center shadow-md hover:shadow-lg transition-all'
           key={index}
         >
-          <div className='m-auto text-center'>
-            <Image
-              className='m-auto'
-              src={item.icon}
-              alt={item.name}
-              width={item.w}
-              height={item.h}
-            />
-            <span className='notokr text-white text-2xl font-light my-auto mt-2 block'>
+          <div className='text-center w-full'>
+            <div className='relative w-16 h-16 m-auto'>
+              <Image
+                src={item.icon}
+                alt={item.name}
+                layout='fill'
+                objectFit='contain'
+              />
+            </div>
+            <span className='notokr text-white font-light my-auto md:mt-3 sm:mt-0 block xl:text-2xl lg:text-xl'>
               {item.name}
             </span>
           </div>

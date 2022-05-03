@@ -1,11 +1,13 @@
 const Introduce = () => {
   return (
     <div className='font-notokr'>
-      <span className='block text-6xl font-bold text-white'>Hello,</span>
-      <span className='block text-6xl font-bold text-white mt-6'>
+      <span className='block lg:text-6xl sm:text-5xl font-bold text-white'>
+        Hello,
+      </span>
+      <span className='block lg:text-6xl sm:text-5xl font-bold text-white mt-6'>
         I&apos;m Jiwon Park
       </span>
-      <p className='text-2xl text-dusty-grey mt-10 leading-9'>
+      <p className='lg:text-2xl lg:leading-9 sm:text-xl sm:leading-8 text-dusty-grey mt-10'>
         I&apos;m a&nbsp;
         <span className='text-white underline underline-offset-2'>
           Front End Developer,

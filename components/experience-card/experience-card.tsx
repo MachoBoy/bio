@@ -83,7 +83,7 @@ const ExperienceCard = () => {
               <ul>
                 {exp.description.map((desc, descKey) => (
                   <li
-                    className="relative pl-8 mb-2 text-lg before:content-['>'] before:absolute before:left-0"
+                    className="relative pl-8 mb-2 lg:text-lg md:text-base before:content-['>'] before:absolute before:left-0"
                     key={descKey}
                   >
                     {desc}

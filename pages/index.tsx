@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import type { NextPage } from 'next';
 import { ScrollingProvider, Section } from 'react-scroll-section';
 import AOS from 'aos';
@@ -17,6 +17,8 @@ const Home: NextPage = () => {
       once: true,
     });
   });
+  const [isNavOpen, setNavOpen] = useState(false);
+
   return (
     <div>
       <Head>
@@ -26,8 +28,12 @@ const Home: NextPage = () => {
       </Head>
       <ScrollingProvider offset={-130}>
         <div className='relative w-100 bg-green-cyan'>
-          <Header />
-          <div className='max-w-screen-2xl min-h-screen mx-auto flex flex-col justify-center items-center'>
+          <Header isNavOpen={isNavOpen} setNavOpen={setNavOpen} />
+          <div
+            className={`max-w-screen-2xl min-h-screen mx-auto flex flex-col justify-center items-center px-5 ${
+              isNavOpen ? 'blur-sm' : 'blur-none'
+            }`}
+          >
             <Section
               id='About Me'
               className='flex justify-center items-center min-h-screen w-5/6'
@@ -37,14 +43,14 @@ const Home: NextPage = () => {
             <Section
               data-aos='fade-up'
               id='Skills'
-              className='flex justify-center items-center w-5/6'
+              className='flex justify-center items-center md:w-5/6'
             >
               <SkillCard />
             </Section>
             <Section
               data-aos='fade-up'
               id='Experiences'
-              className='flex w-3/6 my-52'
+              className='flex 2xl:w-3/6 md:w-5/6 my-52'
             >
               <ExperienceCard />
             </Section>

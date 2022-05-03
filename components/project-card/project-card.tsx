@@ -98,22 +98,6 @@ const ProjectCard = () => {
     fade: true,
   };
 
-  const customStyles = {
-    content: {
-      width: '60%',
-      overflow: 'none',
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
-      border: '1px solid #c084fc',
-      background: '#36363A',
-      padding: '50px',
-    },
-  };
-
   const openModal = (index: number) => {
     setTimeout(() => {
       const sliderElement = sliderRef.current;
@@ -135,7 +119,7 @@ const ProjectCard = () => {
       <div className='flex flex-wrap justify-center items-start mx-auto'>
         {projectCardItem.map((item, index) => (
           <div
-            className={`relative w-1/4 m-3 h-64 bg-cover bg-center ${item.thumbnail} bg-no-repeat group cursor-pointer`}
+            className={`relative lg:w-1/4 sm:w-2/5 m-3 h-64 bg-cover bg-center ${item.thumbnail} bg-no-repeat group cursor-pointer`}
             key={index}
             onClick={() => openModal(index)}
           >
@@ -145,12 +129,12 @@ const ProjectCard = () => {
           </div>
         ))}
       </div>
-      <div id='project-modal'>
+      <div id='project-modal' className='relative'>
         <Modal
+          className='absolute xl:w-3/5 md:w-4/5 sm:w-3/5 top-1/2 left-1/2 right-auto bottom-auto -mr-[50%] -translate-x-1/2 -translate-y-1/2 bg-card-bg border-2 border-solid border-purple-400 lg:p-14 sm:p-10'
           closeTimeoutMS={500}
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
-          style={customStyles}
           overlayClassName='Overlay'
         >
           <div className='w-full'>

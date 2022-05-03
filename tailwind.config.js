@@ -1,9 +1,16 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    screens: {
+      xxs: '320px',
+      xs: '475px',
+      ...defaultTheme.screens,
+    },
     extend: {
       fontFamily: {
         notokr: ['Noto Sans KR', 'sans-serif'],
