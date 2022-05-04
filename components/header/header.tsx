@@ -17,7 +17,7 @@ const Header = ({ isNavOpen, setNavOpen }: Props) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full h-24 bg-green-cyan flex items-center justify-center mx-auto select-auto z-50 ${
+      className={`fixed top-0 left-0 w-full h-24 bg-green-cyan flex items-center justify-center mx-auto select-auto z-40 ${
         scrollPosition === 0 ? 'shadow-none' : 'shadow-lg'
       }`}
     >
@@ -26,7 +26,7 @@ const Header = ({ isNavOpen, setNavOpen }: Props) => {
           <Image src='/jplogo.png' layout='fill' alt='logo' />
         </div>
         <button
-          className='hamburger w-6 items-center justify-center relative z-50 lg:hidden xxs:flex'
+          className='hamburger w-6 items-center justify-center relative z-50 lg:hidden xxs:flex xxs:mr-3'
           onClick={handleNav}
         >
           <span
