@@ -123,7 +123,7 @@ const ProjectCard = () => {
             key={index}
             onClick={() => openModal(index)}
           >
-            <div className='bg-purple-400/70 absolute w-full h-full inset-0 text-white opacity-0 lg:group-hover:opacity-100 xxs:opacity-100 flex justify-center items-center font-notokr md:text-2xl sm:text-xl font-semibold lg:transition-all text-center'>
+            <div className='bg-purple-400/70 absolute w-full h-full inset-0 text-white opacity-0 lg:group-hover:opacity-100 md:opacity-0 xxs:opacity-100 flex justify-center items-center font-notokr md:text-2xl sm:text-xl font-semibold lg:transition-all text-center'>
               {item.name}
             </div>
           </div>
