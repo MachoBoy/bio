@@ -119,11 +119,11 @@ const ProjectCard = () => {
       <div className='flex flex-wrap justify-center items-start mx-auto'>
         {projectCardItem.map((item, index) => (
           <div
-            className={`relative lg:w-1/4 sm:w-2/5 m-3 h-64 bg-cover bg-center ${item.thumbnail} bg-no-repeat group cursor-pointer`}
+            className={`relative m-3 lg:w-1/4 md:h-64 xxs:w-2/5 sm:h-44 xxs:h-28 bg-cover bg-center ${item.thumbnail} bg-no-repeat group cursor-pointer`}
             key={index}
             onClick={() => openModal(index)}
           >
-            <div className='bg-purple-400/70 absolute w-full h-full inset-0 text-white opacity-0 group-hover:opacity-100 flex justify-center items-center font-notokr text-2xl font-semibold transition-all text-center'>
+            <div className='bg-purple-400/70 absolute w-full h-full inset-0 text-white opacity-0 lg:group-hover:opacity-100 xxs:opacity-100 flex justify-center items-center font-notokr md:text-2xl sm:text-xl font-semibold lg:transition-all text-center'>
               {item.name}
             </div>
           </div>
@@ -131,7 +131,7 @@ const ProjectCard = () => {
       </div>
       <div id='project-modal' className='relative'>
         <Modal
-          className='absolute xl:w-3/5 md:w-4/5 sm:w-3/5 top-1/2 left-1/2 right-auto bottom-auto -mr-[50%] -translate-x-1/2 -translate-y-1/2 bg-card-bg border-2 border-solid border-purple-400 lg:p-14 sm:p-10'
+          className='absolute xl:w-3/5 xxs:w-4/5 top-1/2 left-1/2 right-auto bottom-auto -mr-[50%] -translate-x-1/2 -translate-y-1/2 bg-card-bg border-2 border-solid border-purple-400 lg:p-14 sm:p-10'
           closeTimeoutMS={500}
           isOpen={modalIsOpen}
           onRequestClose={closeModal}

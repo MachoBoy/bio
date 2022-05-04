@@ -52,11 +52,11 @@ const ExperienceCard = () => {
   };
 
   return (
-    <div className='exp-card-container w-full bg-card-bg p-5 rounded-2xl flex flex-row h-96 min-h-full shadow-md'>
-      <div className='relative flex flex-col justify-start w-max'>
+    <div className='exp-card-container w-full bg-card-bg p-5 rounded-2xl flex sm:flex-row xxs:flex-col h-96 min-h-full shadow-md'>
+      <div className='relative flex sm:flex-col xxs:flex-row justify-start w-max xxs:overflow-x-visible'>
         {experienceItem.map((item, index) => (
           <button
-            className={`block m-3 text-left text-sm ${
+            className={`block sm:m-3 xxs:m-2 text-left text-sm ${
               item.isActive ? 'text-purple-400' : 'text-white'
             } hover:text-purple-400 transition-colors`}
             key={index}
@@ -69,21 +69,21 @@ const ExperienceCard = () => {
       {experienceItem.map((exp, expIndex) => {
         return exp.isActive ? (
           <div
-            className='desc text-white pt-3 pl-6 max-w-xl w-full'
+            className='desc text-white pt-3 sm:pl-6 xxs:pl-2 max-w-xl w-full'
             key={expIndex}
           >
-            <div className='text-2xl'>
+            <div className='sm:text-2xl xxs:text-lg'>
               {exp.position}{' '}
               <span className='text-purple-400'>@ {exp.name}</span>
             </div>
-            <div className='text-md mt-1 mb-5 text-dusty-grey font-robotoMono'>
+            <div className='text-md mt-1 sm:mb-5 xxs:mb-2 text-dusty-grey font-robotoMono'>
               {exp.date}
             </div>
             <div>
               <ul>
                 {exp.description.map((desc, descKey) => (
                   <li
-                    className="relative pl-8 mb-2 lg:text-lg md:text-base before:content-['>'] before:absolute before:left-0"
+                    className="relative pl-8 mb-2 lg:text-lg sm:text-base xxs:text-sm before:content-['>'] before:absolute before:left-0"
                     key={descKey}
                   >
                     {desc}

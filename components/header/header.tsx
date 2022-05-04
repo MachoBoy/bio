@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import useScrollPosition from '../../hook/useScrollPosition';
 import { useScrollSections } from 'react-scroll-section';
-import { useState } from 'react';
 
 interface Props {
   isNavOpen: boolean;
@@ -11,7 +10,6 @@ interface Props {
 const Header = ({ isNavOpen, setNavOpen }: Props) => {
   const scrollPosition = useScrollPosition();
   const sections = useScrollSections();
-  // const [isNavOpen, setNavOpen] = useState(false);
 
   const handleNav = () => {
     setNavOpen(!isNavOpen);
@@ -28,7 +26,7 @@ const Header = ({ isNavOpen, setNavOpen }: Props) => {
           <Image src='/jplogo.png' layout='fill' alt='logo' />
         </div>
         <button
-          className='hamburger w-6 items-center justify-center relative z-50 lg:hidden sm:flex'
+          className='hamburger w-6 items-center justify-center relative z-50 lg:hidden xxs:flex'
           onClick={handleNav}
         >
           <span
@@ -48,7 +46,7 @@ const Header = ({ isNavOpen, setNavOpen }: Props) => {
           ></span>
         </button>
         <aside
-          className={`w-2/4 h-screen bg-card-bg fixed top-0 bottom-0 right-0 shadow-2xl py-14 px-3 flex items-center transition-all ${
+          className={`sm:w-1/2 xxs:w-3/4 h-screen bg-card-bg fixed top-0 bottom-0 right-0 shadow-2xl py-14 px-3 flex items-center transition-all ${
             isNavOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
@@ -69,7 +67,7 @@ const Header = ({ isNavOpen, setNavOpen }: Props) => {
             </ul>
           </nav>
         </aside>
-        <ul className='nav-element flex-row lg:flex sm:hidden'>
+        <ul className='nav-element flex-row lg:flex xxs:hidden'>
           {sections.map(({ id, onClick, selected }, index) => (
             <li
               className={`block p-4 font-notokr ${

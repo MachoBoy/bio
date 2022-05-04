@@ -67,11 +67,11 @@ const SkillCard = () => {
     <div className='skill-card-container flex justify-center flex-row flex-wrap h-fit'>
       {skillCardItem.map((item, index) => (
         <div
-          className='flex-col xl:w-48 lg:w-44 md:w-32 md:h-36 sm:w-28 sm:h-28 rounded-xl bg-card-bg hover:bg-purple-400 m-2 p-3 flex justify-center items-center shadow-md hover:shadow-lg transition-all'
+          className='flex-col xl:w-48 lg:w-44 md:w-32 md:h-36 sm:w-28 sm:h-28 xs:w-24 xs:h-24 rounded-xl bg-card-bg hover:bg-purple-400 m-2 p-3 flex justify-center items-center shadow-md hover:shadow-lg transition-all'
           key={index}
         >
           <div className='text-center w-full'>
-            <div className='relative w-16 h-16 m-auto'>
+            <div className='relative sm:w-16 sm:h-16 xs:w-12 xs:h-12 m-auto'>
               <Image
                 src={item.icon}
                 alt={item.name}
@@ -79,7 +79,7 @@ const SkillCard = () => {
                 objectFit='contain'
               />
             </div>
-            <span className='notokr text-white font-light my-auto md:mt-3 sm:mt-0 block xl:text-2xl lg:text-xl'>
+            <span className='notokr text-white font-light my-auto md:mt-3 sm:mt-0 block xl:text-2xl lg:text-xl xxs:text-base'>
               {item.name}
             </span>
           </div>
