@@ -21,7 +21,11 @@ const Introduce = () => {
         <span className='text-white underline underline-offset-2'>
           admin panels
         </span>{' '}
-        for the platforms. I also have experience{' '}
+        for the platforms.{' '}
+        <span className='text-white underline underline-offset-2'>
+          countless game events & updated pages with animations.
+        </span>{' '}
+        I also have experience{' '}
         <span className='text-white underline underline-offset-2'>
           designing the application to deploy
         </span>{' '}
