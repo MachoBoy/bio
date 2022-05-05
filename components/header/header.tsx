@@ -27,7 +27,7 @@ const Header = ({ isNavOpen, setNavOpen }: Props) => {
         </div>
         <button
           className='hamburger w-6 flex items-center justify-center relative z-50 lg:opacity-0 xxs:opacity-100'
-          onClick={handleNav}
+          onClick={() => handleNav()}
         >
           <span
             className={`transform transition w-full h-px bg-white absolute ${
