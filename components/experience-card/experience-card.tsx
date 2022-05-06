@@ -52,11 +52,11 @@ const ExperienceCard = () => {
   };
 
   return (
-    <div className='exp-card-container w-full bg-card-bg p-5 rounded-2xl flex sm:flex-row xxs:flex-col h-96 min-h-full shadow-md'>
-      <div className='relative flex sm:flex-col xxs:flex-row justify-start w-max xxs:overflow-x-visible'>
+    <div className='exp-card-container w-full bg-card-bg p-5 rounded-2xl flex sm:flex-row xxs:flex-col md:h-96 xxs:min-h-fit min-h-full shadow-md'>
+      <div className='relative flex justify-start sm:flex-col xxs:flex-row md:w-max xxs:overflow-x-visible'>
         {experienceItem.map((item, index) => (
           <button
-            className={`block sm:m-3 xxs:m-2 text-left text-sm ${
+            className={`block sm:m-3 xxs:m-2 sm:text-left xxs:text-center text-sm ${
               item.isActive ? 'text-purple-400' : 'text-white'
             } hover:text-purple-400 transition-colors`}
             key={index}
@@ -72,7 +72,7 @@ const ExperienceCard = () => {
             className='desc text-white pt-3 sm:pl-6 xxs:pl-2 max-w-xl w-full'
             key={expIndex}
           >
-            <div className='sm:text-2xl xxs:text-lg'>
+            <div className='sm:text-2xl xxs:text-md'>
               {exp.position}{' '}
               <span className='text-purple-400'>@ {exp.name}</span>
             </div>
