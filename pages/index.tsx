@@ -50,14 +50,14 @@ const Home: NextPage = () => {
             <Section
               data-aos='fade-up'
               id='Experiences'
-              className='flex 2xl:w-3/6 md:w-5/6 my-52'
+              className='flex 2xl:w-3/6 md:w-5/6 mt-52'
             >
               <ExperienceCard />
             </Section>
             <Section
               data-aos='fade-up'
               id='Projects'
-              className='flex w-full mb-52'
+              className='flex w-full justify-center items-center min-h-screen'
             >
               <ProjectCard />
             </Section>
