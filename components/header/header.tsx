@@ -32,7 +32,7 @@ const Header = ({ isNavOpen, setNavOpen }: Props) => {
     >
       <nav className='w-11/12 flex justify-between items-center'>
         <div
-          className='relative block w-20 h-20 mt-3'
+          className='relative block w-20 h-20 mt-3 cursor-pointer'
           onClick={() => scrollToTop()}
         >
           <Image src='/jplogo.png' layout='fill' alt='logo' />
