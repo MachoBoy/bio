@@ -15,6 +15,15 @@ const Header = ({ isNavOpen, setNavOpen }: Props) => {
     setNavOpen(!isNavOpen);
   };
 
+  const closeNav = (scrollToSection: () => void) => {
+    setNavOpen(false);
+    scrollToSection();
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 w-full h-24 bg-green-cyan flex items-center justify-center mx-auto select-auto z-40 ${
@@ -22,7 +31,10 @@ const Header = ({ isNavOpen, setNavOpen }: Props) => {
       }`}
     >
       <nav className='w-11/12 flex justify-between items-center'>
-        <div className='relative block w-20 h-20 mt-3'>
+        <div
+          className='relative block w-20 h-20 mt-3'
+          onClick={() => scrollToTop()}
+        >
           <Image src='/jplogo.png' layout='fill' alt='logo' />
         </div>
         <button
@@ -59,7 +71,10 @@ const Header = ({ isNavOpen, setNavOpen }: Props) => {
                   }`}
                   key={index}
                 >
-                  <button className='hover:text-purple-400' onClick={onClick}>
+                  <button
+                    className='hover:text-purple-400'
+                    onClick={() => closeNav(onClick)}
+                  >
                     {id}
                   </button>
                 </li>
