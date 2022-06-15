@@ -7,10 +7,12 @@ const ExperienceCard = () => {
       position: 'Full Stack Developer',
       date: '2021 August - Current',
       description: [
-        'Build the admin panel of the E-commerce platform',
-        'Write Front End and Back-End codes using Firebase and Firebase cloud functions',
-        'Developed the Back-End codes to cancel the transactions using third party APIs',
-        'Developed security and permissions',
+        'Designed client-side and server-side architecture',
+        'Created the admin dashboard of the E-commerce platform.',
+        'Build features and applications with a mobile responsive design.',
+        'Test application to find troubleshoot, debug and update with latest version.',
+        'Supervised, led, and mentored 3 junior team member to achieve high performance.',
+        'Write technical documentation.',
       ],
       isActive: true,
     },
@@ -19,11 +21,12 @@ const ExperienceCard = () => {
       position: 'Front End Developer',
       date: '2018 January - 2022 March',
       description: [
-        'Developed user experience features and deploy a platform',
-        'Optimize the speed and scalability of the application',
-        'Developed promotion and event pages to promote games',
-        'Built, optimized, updated and maintained the features of the admin panel',
-        'Write documentation to help teams to maintain the application',
+        'Delivered 100+ projects of landing pages with mobile responsive design for game services.',
+        'Built 10+ reusable templates to support email marketing campaigns and promotions.',
+        'Developed functions and maintain client side game platform.',
+        'Created the admin dashboard of the game platform services.',
+        'Built reusable code and libraries for future use.',
+        'Optimize the speed and scalability of the applications.',
       ],
       isActive: false,
     },
@@ -32,9 +35,9 @@ const ExperienceCard = () => {
       position: 'Front End Developer',
       date: '2016 December - 2017 July',
       description: [
-        'Building Online Stores, themes, and apps using the Shopify platform',
-        'Developing customize code, scripts and apps to solve complex problems',
-        'Integrate third-party apps into online store',
+        'Created E-commerce platform with Shopify.',
+        'Generate custom Shopify themes and modify pre-existing templates based on brand objectives.',
+        'Connect with marketing tools, platforms APIs, and apps to optimize the store for functionalities.',
       ],
       isActive: false,
     },
@@ -52,7 +55,7 @@ const ExperienceCard = () => {
   };
 
   return (
-    <div className='exp-card-container w-full bg-card-bg p-5 rounded-2xl flex sm:flex-row xxs:flex-col md:h-96 xxs:min-h-fit min-h-full shadow-md'>
+    <div className='exp-card-container w-full bg-card-bg p-5 rounded-2xl flex sm:flex-row xxs:flex-col md:h-auto xxs:min-h-fit min-h-full shadow-md'>
       <div className='relative flex justify-start sm:flex-col xxs:flex-row md:w-max xxs:overflow-x-visible'>
         {experienceItem.map((item, index) => (
           <button
@@ -69,7 +72,7 @@ const ExperienceCard = () => {
       {experienceItem.map((exp, expIndex) => {
         return exp.isActive ? (
           <div
-            className='desc text-white pt-3 sm:pl-6 xxs:pl-2 max-w-xl w-full'
+            className='desc text-white pt-3 sm:pl-6 xxs:pl-2 max-w-2xl w-full'
             key={expIndex}
           >
             <div className='sm:text-2xl xxs:text-md'>

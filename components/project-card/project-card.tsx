@@ -15,7 +15,7 @@ const ProjectCard = () => {
     {
       thumbnail: 'bg-hiossen-1',
       name: 'Hiossen Implant Shop',
-      desc: 'An E-commerce platform that registered doctor can order the implant equipments. The option and quantity of items can be configure in shopify admin panel. View your order status and history in account',
+      desc: 'An E-commerce platform that registered doctor can order the implant equipments. The option and quantity of items can be configure in shopify admin panel. View order status and history in account',
       module: ['Shopify', 'Plugins'],
       images: ['bg-hiossen-1', 'bg-hiossen-2', 'bg-hiossen-3'],
       links: ['https://denall.ca/'],

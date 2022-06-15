@@ -50,7 +50,7 @@ const Home: NextPage = () => {
             <Section
               data-aos='fade-up'
               id='Experiences'
-              className='flex 2xl:w-3/6 md:w-5/6 mt-52'
+              className='flex 2xl:w-3/6 md:w-4/6 mt-52'
             >
               <ExperienceCard />
             </Section>
