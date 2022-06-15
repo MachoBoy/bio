@@ -55,7 +55,7 @@ const ExperienceCard = () => {
   };
 
   return (
-    <div className='exp-card-container w-full bg-card-bg p-5 rounded-2xl flex sm:flex-row xxs:flex-col md:h-auto xxs:min-h-fit min-h-full shadow-md'>
+    <div className='exp-card-container w-full bg-card-bg p-5 rounded-2xl flex sm:flex-row xxs:flex-col md:h-[404px] xxs:min-h-fit min-h-full shadow-md'>
       <div className='relative flex justify-start sm:flex-col xxs:flex-row md:w-max xxs:overflow-x-visible'>
         {experienceItem.map((item, index) => (
           <button

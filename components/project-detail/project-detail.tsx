@@ -23,7 +23,7 @@ const ProjectDetail = (props: any) => {
           {props.item.images.map((image: string, index: number) => (
             <div
               key={index}
-              className={`${image} w-full lg:h-96 md:h-72 sm:h-56 xxs:h-48 bg-top bg-cover bg-no-repeat`}
+              className={`${image} w-full lg:h-96 md:h-72 sm:h-56 xxs:h-48 bg-top bg-contain bg-no-repeat`}
             ></div>
           ))}
         </Slider>

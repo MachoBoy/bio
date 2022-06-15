@@ -131,7 +131,7 @@ const ProjectCard = () => {
       </div>
       <div id='project-modal' className='relative'>
         <Modal
-          className='absolute xl:w-3/5 xxs:w-4/5 top-1/2 left-1/2 right-auto bottom-auto -mr-[50%] -translate-x-1/2 -translate-y-1/2 bg-card-bg border-2 border-solid border-purple-400 lg:p-14 sm:p-10'
+          className='absolute max-w-[1200px] xl:w-3/5 xxs:w-4/5 top-1/2 left-1/2 right-auto bottom-auto -mr-[50%] -translate-x-1/2 -translate-y-1/2 bg-card-bg border-2 border-solid border-purple-400 lg:p-14 sm:p-10'
           closeTimeoutMS={500}
           isOpen={modalIsOpen}
           onRequestClose={closeModal}
