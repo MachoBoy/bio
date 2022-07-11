@@ -16,7 +16,7 @@ const Parallax = ({ children, offset }: ParallaxProps): JSX.Element => {
   const prefersReducedMotion = useReducedMotion();
   const [elementTop, setElementTop] = useState(0);
   const [clientHeight, setClientHeight] = useState(0);
-  const ref = useRef(null);
+  const ref: any = useRef(null);
 
   const { scrollY } = useViewportScroll();
 
