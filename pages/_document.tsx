@@ -14,7 +14,7 @@ export default function Document() {
           href='https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Roboto+Mono:wght@300&display=swap'
           rel='stylesheet'
         />
-        <link
+        {/* <link
           rel='stylesheet'
           type='text/css'
           charSet='UTF-8'
@@ -24,7 +24,7 @@ export default function Document() {
           rel='stylesheet'
           type='text/css'
           href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css'
-        />
+        /> */}
       </Head>
       <body>
         <Main />

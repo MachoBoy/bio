@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/**
 .Overlay {
   z-index: 60;
   position: fixed;
@@ -29,3 +30,4 @@
 .ReactModal__Overlay--before-close {
   opacity: 0;
 }
+**/

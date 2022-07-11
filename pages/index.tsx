@@ -8,7 +8,8 @@ import Header from '../components/header/header';
 import ExperienceCard from '../components/experience-card/experience-card';
 import Introduce from '../components/introduce/introduce';
 import SkillCard from '../components/skill-card/skill-card';
-import ProjectCard from '../components/project-card/project-card';
+// import ProjectCard from '../components/project-card/project-card';
+import ProjectList from '../components/project-list/project-list';
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -27,7 +28,7 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <ScrollingProvider offset={-130}>
-        <div className='relative w-100 bg-green-cyan'>
+        <div className='relative w-100 transition-colors duration-500 bg-light-white dark:bg-green-cyan'>
           <Header isNavOpen={isNavOpen} setNavOpen={setNavOpen} />
           <div
             className={`max-w-screen-2xl min-h-screen mx-auto flex flex-col justify-center items-center px-5 ${
@@ -43,23 +44,23 @@ const Home: NextPage = () => {
             <Section
               data-aos='fade-up'
               id='Skills'
-              className='flex justify-center items-center md:w-5/6'
+              className='flex justify-center items-center min-h-screen md:w-5/6'
             >
               <SkillCard />
             </Section>
             <Section
               data-aos='fade-up'
               id='Experiences'
-              className='flex 2xl:w-3/6 md:w-4/6 mt-52'
+              className='flex justify-center items-center 2xl:w-8/12 xxs:w-5/6 min-h-screen'
             >
               <ExperienceCard />
             </Section>
             <Section
               data-aos='fade-up'
               id='Projects'
-              className='flex w-full justify-center items-center min-h-screen'
+              className='2xl:w-10/12 xxs:w-5/6 flex justify-center items-center min-h-screen'
             >
-              <ProjectCard />
+              <ProjectList />
             </Section>
           </div>
         </div>

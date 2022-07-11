@@ -1,6 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
@@ -20,6 +21,13 @@ module.exports = {
         'green-cyan': '#1C2422',
         'dusty-grey': '#A39595',
         'card-bg': '#36363A',
+        'light-card-bg': '#fff',
+        'light-white': '#F3F0D7',
+        'light-green': '#CEE5D0',
+        'light-red': '#FF7878',
+        'light-orange': '#FFAB73',
+        'light-blue': '#1C6DD0',
+        'light-blue-2': '#92B4EC',
       },
       backgroundImage: {
         'papaya-admin-1': "url('/papaya-admin_1.png')",
