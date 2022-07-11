@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import type { NextPage } from 'next';
 import { ScrollingProvider, Section } from 'react-scroll-section';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+// import AOS from 'aos';
+// import 'aos/dist/aos.css';
 import Head from 'next/head';
 import Header from '../components/header/header';
 import ExperienceCard from '../components/experience-card/experience-card';
@@ -12,12 +12,12 @@ import SkillCard from '../components/skill-card/skill-card';
 import ProjectList from '../components/project-list/project-list';
 
 const Home: NextPage = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 500,
-      once: true,
-    });
-  });
+  // useEffect(() => {
+  //   AOS.init({
+  //     duration: 500,
+  //     once: true,
+  //   });
+  // });
   const [isNavOpen, setNavOpen] = useState(false);
 
   return (
@@ -27,7 +27,7 @@ const Home: NextPage = () => {
         <meta name='description' content='introduce myself' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <ScrollingProvider offset={-130}>
+      <ScrollingProvider offset={-230}>
         <div className='relative w-100 transition-colors duration-500 bg-light-white dark:bg-green-cyan'>
           <Header isNavOpen={isNavOpen} setNavOpen={setNavOpen} />
           <div
@@ -42,23 +42,27 @@ const Home: NextPage = () => {
               <Introduce />
             </Section>
             <Section
-              data-aos='fade-up'
+              // data-aos='fade-up'
               id='Skills'
               className='flex justify-center items-center min-h-screen md:w-5/6'
             >
-              <SkillCard />
+              <div className='sm:-mt-72 xxs:mt-0'>
+                <SkillCard />
+              </div>
             </Section>
             <Section
-              data-aos='fade-up'
+              // data-aos='fade-up'
               id='Experiences'
               className='flex justify-center items-center 2xl:w-8/12 xxs:w-5/6 min-h-screen'
             >
-              <ExperienceCard />
+              <div className='sm:-mt-56 xxs:-mt-56'>
+                <ExperienceCard />
+              </div>
             </Section>
             <Section
-              data-aos='fade-up'
+              // data-aos='fade-up'
               id='Projects'
-              className='2xl:w-10/12 xxs:w-5/6 flex justify-center items-center min-h-screen'
+              className='flex justify-center items-center 2xl:w-10/12 xxs:w-5/6'
             >
               <ProjectList />
             </Section>

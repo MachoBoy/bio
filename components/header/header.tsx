@@ -13,8 +13,6 @@ const Header = ({ isNavOpen, setNavOpen }: Props) => {
   const sections = useScrollSections();
   const { theme, setTheme } = useTheme();
 
-  console.log(theme);
-
   const handleNav = () => {
     setNavOpen(!isNavOpen);
   };
