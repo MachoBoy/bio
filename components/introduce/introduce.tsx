@@ -7,10 +7,9 @@ const Introduce = () => {
         <SectionTitle number='01' title='About Me' />
       </div>
       <div className='font-notokr z-10'>
-        <span className='block leading-6 lg:text-6xl sm:text-5xl xs:text-4xl xxs:text-3xl font-bold text-light-blue dark:text-white'>
-          Hello,
-          <br />
-          I&apos;m Jiwon Park
+        <span className='block lg:text-6xl sm:text-5xl xs:text-4xl xxs:text-3xl font-bold text-light-blue dark:text-white whitespace-pre-line'>
+          <p>Hello,</p>
+          <p className='sm:mt-4 xxs:mt-2'>I&apos;m Jiwon Park</p>
         </span>
         <p className='lg:text-2xl lg:leading-10 sm:text-xl xxs:text-sm sm:leading-8 text-teal-900 dark:text-dusty-grey sm:mt-10 xs:mt-8 xxs:mt-6'>
           I&apos;m a&nbsp;
