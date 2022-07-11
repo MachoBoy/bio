@@ -57,10 +57,10 @@ const ExperienceCard = () => {
 
   return (
     <div className='relative'>
-      <div className='absolute 2xl:-top-56 xl:-top-36 lg:-top-28 md:-top-20 sm:-top-14 xs:-top-12 xxs:-top-8'>
+      <div className='absolute 2xl:-top-56 xl:-top-44 lg:-top-36 md:-top-20 sm:-top-16 xs:-top-16 xxs:-top-12'>
         <SectionTitle number='03' title='Experiences' />
       </div>
-      <div className='exp-card-container w-full bg-blue-400 dark:bg-card-bg p-5 rounded-2xl flex sm:flex-row xxs:flex-col lg:h-[404px] xs:h-[500px] xxs:h-[676px] shadow-xl'>
+      <div className='exp-card-container w-full bg-blue-400 dark:bg-card-bg p-5 rounded-2xl flex sm:flex-row xxs:flex-col lg:h-[404px] xs:h-[500px] xxs:h-auto shadow-xl'>
         <div className='relative flex justify-start sm:flex-col xxs:flex-row md:w-max xxs:overflow-x-visible'>
           {experienceItem.map((item, index) => (
             <button
