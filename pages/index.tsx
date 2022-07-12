@@ -37,14 +37,14 @@ const Home: NextPage = () => {
           >
             <Section
               id='About Me'
-              className='flex justify-center items-center min-h-screen w-5/6'
+              className='flex justify-center items-center min-h-screen xs:w-5/6 xxs:w-11/12'
             >
               <Introduce />
             </Section>
             <Section
               // data-aos='fade-up'
               id='Skills'
-              className='flex justify-center items-center min-h-screen md:w-5/6'
+              className='flex justify-center items-center min-h-screen xs:w-5/6 xxs:w-11/12'
             >
               <div className='sm:-mt-72 xxs:mt-0'>
                 <SkillCard />
@@ -53,7 +53,7 @@ const Home: NextPage = () => {
             <Section
               // data-aos='fade-up'
               id='Experiences'
-              className='flex justify-center items-center 2xl:w-8/12 xxs:w-5/6 min-h-screen'
+              className='flex justify-center items-center 2xl:w-8/12 xs:w-5/6 xxs:w-11/12 min-h-screen'
             >
               <div className='sm:-mt-56 xxs:-mt-56'>
                 <ExperienceCard />
@@ -62,7 +62,7 @@ const Home: NextPage = () => {
             <Section
               // data-aos='fade-up'
               id='Projects'
-              className='flex justify-center items-center 2xl:w-10/12 xxs:w-5/6'
+              className='flex justify-center items-center 2xl:w-10/12 xs:w-5/6 xxs:w-11/12'
             >
               <ProjectList />
             </Section>

@@ -28,16 +28,22 @@ const Header = ({ isNavOpen, setNavOpen }: Props) => {
 
   return (
     <header
-      className={`transition-colors duration-500 bg-light-white dark:bg-green-cyan fixed top-0 left-0 w-full h-24 flex items-center justify-center mx-auto select-auto z-40 ${
+      className={`transition-colors duration-500 bg-light-white dark:bg-green-cyan fixed top-0 left-0 w-full sm:h-24 xxs:h-20 flex items-center justify-center mx-auto select-auto z-40 ${
         scrollPosition === 0 ? 'shadow-none' : 'shadow-lg'
       }`}
     >
       <nav className='w-11/12 flex justify-between items-center'>
         <div
-          className='relative block w-20 h-20 mt-3 cursor-pointer'
+          className='relative block mt-3 cursor-pointer box-border w-20 max-h-20'
           onClick={() => scrollToTop()}
         >
-          <Image src='/jplogo.png' layout='fill' alt='logo' />
+          <Image
+            src='/jplogo.png'
+            layout='responsive'
+            width={80}
+            height={80}
+            alt='logo'
+          />
         </div>
         <button
           className='hamburger w-6 h-8 flex items-center justify-center relative z-50 lg:opacity-0 xxs:opacity-100'
