@@ -39,28 +39,26 @@ const Home: NextPage = () => {
                 <Introduce />
               </Section>
             </FadeInTop>
-            <FadeInBottom isList={false}>
-              <Parallax offset={200}>
-                <Section
-                  id='Skills'
-                  className='flex justify-center items-center min-h-screen xs:w-5/6 xxs:w-11/12 mx-auto'
-                >
-                  <div className='sm:-mt-72 xxs:mt-0'>
-                    <SkillCard />
-                  </div>
-                </Section>
-              </Parallax>
-            </FadeInBottom>
-            <FadeInBottom isList={false}>
-              <Section
-                id='Experiences'
-                className='flex justify-center items-center 2xl:w-8/12 xs:w-5/6 xxs:w-11/12 min-h-screen mx-auto'
-              >
-                <div className='sm:-mt-56 xxs:-mt-56'>
-                  <ExperienceCard />
-                </div>
-              </Section>
-            </FadeInBottom>
+            {/* <FadeInBottom isList={false}> */}
+            <Section
+              id='Skills'
+              className='flex justify-center items-center min-h-screen xs:w-5/6 xxs:w-11/12 mx-auto'
+            >
+              <div className='sm:-mt-72 xxs:mt-0'>
+                <SkillCard />
+              </div>
+            </Section>
+            {/* </FadeInBottom> */}
+            {/* <FadeInBottom isList={false}> */}
+            <Section
+              id='Experiences'
+              className='flex justify-center items-center 2xl:w-8/12 xs:w-5/6 xxs:w-11/12 min-h-screen mx-auto'
+            >
+              <div className='sm:-mt-56 xxs:-mt-56'>
+                <ExperienceCard />
+              </div>
+            </Section>
+            {/* </FadeInBottom> */}
             <Section
               id='Projects'
               className='flex justify-center items-center 2xl:w-10/12 xs:w-5/6 xxs:w-11/12'

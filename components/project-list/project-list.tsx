@@ -27,7 +27,7 @@ const ProjectList = () => {
                   />
                 </div>
                 <div className='right lg:w-7/12 xxs:w-full lg:pl-6 xxs:pl-0 lg:mt-0 xxs:mt-3 flex flex-col justify-start items-start'>
-                  <h3 className='w-full xl:text-3xl lg:text-2xl md:text-xl xxs:text-lg text-white md:text-left xxs:text-center'>
+                  <h3 className='w-full xl:text-3xl lg:text-2xl md:text-xl xxs:text-lg text-lg text-white md:text-left xxs:text-center font-semibold'>
                     {name}
                   </h3>
                   <p className='w-full mt-5 xl:text-xl lg:text-md text-white md:text-left xxs:text-center'>
@@ -36,7 +36,7 @@ const ProjectList = () => {
                   <div className='w-full flex md:justify-start xxs:justify-center mt-2 flex-wrap'>
                     {module.map((lib: string, index: number) => (
                       <div
-                        className='w-auto py-1 px-2 sm:m-2 xxs:m-1 lg:text-sm xxs:text-xs text-black bg-[#ffd24c]  dark:bg-gray-500 rounded-md shadow-md first:ml-0'
+                        className='w-auto py-1 px-2 sm:m-2 xxs:m-1 lg:text-sm xxs:text-xs text-black bg-[#ffd24c]  dark:bg-gray-500 dark:text-white rounded-md shadow-md first:ml-0'
                         key={index}
                       >
                         {lib}
@@ -47,7 +47,7 @@ const ProjectList = () => {
                     {links
                       ? links.map((link: string, index: number) => (
                           <a
-                            className='text-white hover:text-light-blue dark:hover:text-purple-400 sm:mx-3 xxs:mx-1 sm:text-base xxs:text-sm first:ml-0'
+                            className='text-white hover:text-[#ffd24c] dark:hover:text-purple-400 sm:mx-3 xxs:mx-1 sm:text-base xxs:text-sm first:ml-0'
                             key={index}
                             href={link}
                             target='_blank'

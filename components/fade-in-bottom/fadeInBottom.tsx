@@ -9,7 +9,7 @@ function FadeInBottom({ children, isList }: Props) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: isList ? ['start end', '0.4 0.8'] : ['start end', '0.2 0.3'],
+    offset: isList ? ['start end', '0.4 0.8'] : ['start end', '0.9 0.8'],
   });
 
   return (
