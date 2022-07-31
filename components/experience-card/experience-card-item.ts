@@ -80,6 +80,22 @@ const ProjectCardItem = [
     module: ['React', 'Ant Design', 'tailwindcss', 'Firebase', 'TypeScript'],
     images: ['bg-grmk-1', 'bg-grmk-2', 'bg-grmk-3', 'bg-grmk-4', 'bg-grmk-5'],
   },
+  {
+    thumbnail: '/reventures1.png',
+    name: 'RE:VENTURES',
+    desc: 'UNDER DEVELOPMENT: The official website that company name RE:VENTURES ',
+    module: [
+      'Next JS',
+      'Typescript',
+      'tailwindcss',
+      'GraphQL',
+      'Apollo Client',
+      'react-slick',
+      'react-hook-form',
+      'Headless CMS',
+    ],
+    images: '',
+  },
 ];
 
 export default ProjectCardItem;

@@ -17,7 +17,7 @@ const Menu = () => {
     <div className='flex flex-col mt-16 w-2/5'>
       {menuItem.map((item, index) => (
         <div
-          className='flex flex-row items-center font-notokr mt-4 group cursor-pointer'
+          className='flex flex-row items-center mt-4 group cursor-pointer'
           key={index}
         >
           <span className='text-2xl text-dusty-grey group-hover:text-white transition-all'>

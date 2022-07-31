@@ -11,9 +11,15 @@ export default function Document() {
           crossOrigin='true'
         />
         <link
+          rel='stylesheet'
+          as='style'
+          crossOrigin='true'
+          href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.4/dist/web/static/pretendard.css'
+        />
+        {/* <link
           href='https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Roboto+Mono:wght@300&display=swap'
           rel='stylesheet'
-        />
+        /> */}
         {/* <link
           rel='stylesheet'
           type='text/css'

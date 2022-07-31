@@ -16,6 +16,9 @@ module.exports = {
       fontFamily: {
         notokr: ['Noto Sans KR', 'sans-serif'],
         robotoMono: ['Roboto Mono', 'monospace'],
+        pretender: [
+          'Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, Helvetica Neue, Segoe UI, Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, sans-serif;',
+        ],
       },
       colors: {
         'green-cyan': '#1C2422',

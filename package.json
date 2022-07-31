@@ -13,7 +13,7 @@
     "@types/react-modal": "^3.13.1",
     "@types/react-slick": "^0.23.8",
     "aos": "^2.3.4",
-    "framer-motion": "^6.3.0",
+    "framer-motion": "^6.5.1",
     "next": "12.1.5",
     "next-themes": "^0.2.0",
     "next-transpile-modules": "^9.0.0",

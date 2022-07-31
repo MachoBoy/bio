@@ -15,7 +15,7 @@ const ProjectDetail = (props: any) => {
     <div className='flex flex-col align-center items-center'>
       <div className='w-5/6'>
         <div className='w-full text-center my-5'>
-          <h3 className='block lg:text-3xl sm:text-2xl xxs:text-lg font-notokr text-purple-400'>
+          <h3 className='block lg:text-3xl sm:text-2xl xxs:text-lg text-purple-400'>
             {props.item.name}
           </h3>
         </div>
@@ -37,7 +37,7 @@ const ProjectDetail = (props: any) => {
             </div>
           ))}
         </div>
-        <div className='font-notokr lg:text-lg sm:text-base xxs:text-sm text-white text-center'>
+        <div className='lg:text-lg sm:text-base xxs:text-sm text-white text-center'>
           <p>{props.item.desc}</p>
         </div>
         <div className='flex justify-center mt-2 text-center'>

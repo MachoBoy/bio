@@ -10,7 +10,7 @@ const Introduce = () => {
         </div>
       </Parallax>
       <Parallax offset={50}>
-        <div className='font-notokr z-10'>
+        <div className='z-10'>
           <span className='block lg:text-6xl sm:text-5xl xs:text-4xl xxs:text-3xl font-bold text-light-blue dark:text-white whitespace-pre-line'>
             <p>Hello,</p>
             <p className='sm:mt-4 xxs:mt-2'>I&apos;m Jiwon Park</p>

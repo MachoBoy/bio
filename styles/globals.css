@@ -1,4 +1,9 @@
 @tailwind base;
+@layer base {
+  * {
+    @apply font-notokr;
+  }
+}
 @tailwind components;
 @tailwind utilities;
 

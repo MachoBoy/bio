@@ -1,4 +1,4 @@
-import { ReactNode, useState, useRef, useLayoutEffect } from 'react';
+import { ReactNode, useState, useRef, useEffect } from 'react';
 import {
   motion,
   useViewportScroll,
@@ -23,11 +23,13 @@ const Parallax = ({ children, offset }: ParallaxProps): JSX.Element => {
   const initial = elementTop - clientHeight;
   const final = elementTop + offset;
 
+  // console.log('when y is', initial, final, offset, -offset);
+
   const yRange = useTransform(scrollY, [initial, final], [offset, -offset]);
 
   const y = useSpring(yRange, { stiffness: 400, damping: 90 });
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const element = ref.current;
     const onResize = () => {
       setElementTop(
