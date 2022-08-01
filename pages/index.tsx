@@ -2,20 +2,16 @@ import { useState } from 'react';
 import type { NextPage } from 'next';
 import { ScrollingProvider, Section } from 'react-scroll-section';
 import Head from 'next/head';
+import useWidth from '../hook/useWidth';
 import Header from '../components/header/header';
-import FadeInBottom from '../components/fade-in-bottom/fadeInBottom';
 import ExperienceCard from '../components/experience-card/experience-card';
 import Introduce from '../components/introduce/introduce';
 import SkillCard from '../components/skill-card/skill-card';
-// import ProjectCard from '../components/project-card/project-card';
 import ProjectList from '../components/project-list/project-list';
-import Parallax from '../components/parallax/Parallax';
 import FadeInTop from '../components/fade-in-top/fadeInTop';
 
 const Home: NextPage = () => {
   const [isNavOpen, setNavOpen] = useState(false);
-  // const { scrollYProgress } = useScroll();
-  // console.log(scrollYProgress);
   return (
     <div>
       <Head>
@@ -23,7 +19,7 @@ const Home: NextPage = () => {
         <meta name='description' content='introduce myself' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <ScrollingProvider offset={-230}>
+      <ScrollingProvider>
         <div className='relative w-100 transition-colors duration-500 bg-light-white dark:bg-green-cyan'>
           <Header isNavOpen={isNavOpen} setNavOpen={setNavOpen} />
           <div
@@ -34,34 +30,29 @@ const Home: NextPage = () => {
             <FadeInTop>
               <Section
                 id='About Me'
-                className='flex justify-center items-center min-h-screen xs:w-5/6 xxs:w-11/12 mx-auto'
+                className='flex justify-center items-center min-h-screen w-11/12 xs:w-5/6 xxs:w-11/12 mx-auto'
               >
                 <Introduce />
               </Section>
             </FadeInTop>
-            {/* <FadeInBottom isList={false}> */}
+
             <Section
               id='Skills'
-              className='flex justify-center items-center min-h-screen xs:w-5/6 xxs:w-11/12 mx-auto'
+              className='flex justify-center items-center min-h-screen w-11/12 xs:w-5/6 xxs:w-11/12 mx-auto py-0 sm:py-[200px] xxs:py-0'
             >
-              <div className='sm:-mt-72 xxs:mt-0'>
-                <SkillCard />
-              </div>
+              <SkillCard />
             </Section>
-            {/* </FadeInBottom> */}
-            {/* <FadeInBottom isList={false}> */}
+
             <Section
               id='Experiences'
-              className='flex justify-center items-center 2xl:w-8/12 xs:w-5/6 xxs:w-11/12 min-h-screen mx-auto'
+              className='flex justify-center items-center w-11/12 2xl:w-8/12 xs:w-5/6 xxs:w-11/12 min-h-screen mx-auto'
             >
-              <div className='sm:-mt-56 xxs:-mt-56'>
-                <ExperienceCard />
-              </div>
+              <ExperienceCard />
             </Section>
-            {/* </FadeInBottom> */}
+
             <Section
               id='Projects'
-              className='flex justify-center items-center 2xl:w-10/12 xs:w-5/6 xxs:w-11/12'
+              className='flex justify-center items-center w-11/12 2xl:w-10/12 xs:w-5/6 xxs:w-11/12 sm:py-[200px] xxs:py-[100px]'
             >
               <ProjectList />
             </Section>
