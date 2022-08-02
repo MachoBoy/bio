@@ -1,4 +1,5 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Parallax from '../parallax/Parallax';
 import LinkIcon from '../link-icon/linkIcon';
@@ -48,7 +49,7 @@ const ProjectList = () => {
             index
           ) => (
             <FadeInBottom key={index} isList={true}>
-              <div className='list lg:h-[350px] xs:h-[550px] xxs:h-auto mt-10 flex lg:flex-row xxs:flex-col p-6 rounded-2xl bg-light-blue dark:bg-card-bg shadow-xl last:mb-10'>
+              <div className='list lg:h-[350px] xs:h-[550px] xxs:h-auto mt-10 flex lg:flex-row xxs:flex-col p-6 rounded-2xl bg-light-blue dark:bg-card-bg shadow-xl last:mb-10 group'>
                 <div className='left rounded-2xl bg-white lg:w-5/12 mx-auto w-full h-full relative xs:block xxs:hidden'>
                   <Image
                     src={thumbnail}
@@ -59,19 +60,23 @@ const ProjectList = () => {
                   <div className='hidden md:hidden lg:block'>
                     {mainLink ? (
                       <a
-                        className='absolute inset-0 m-auto w-full h-hull rounded-2xl opacity-0 hover:opacity-100 bg-[#ffd24c]/50 dark:bg-purple-400/50 text-white flex justify-center items-center'
+                        className='absolute inset-0 m-auto w-full h-hull rounded-2xl opacity-0 group-hover:opacity-100 bg-[#ffd24c]/60 dark:bg-purple-400/50 text-white font-semibold flex justify-center items-center'
                         href={mainLink}
                         target='_blank'
                         rel='noreferrer'
                       >
-                        <LinkIcon />
+                        <div className='transition duration-500 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100'>
+                          <LinkIcon />
+                        </div>
                       </a>
                     ) : (
                       <div
                         onClick={() => openModal(images)}
-                        className='cursor-pointer absolute inset-0 m-auto w-full h-hull rounded-2xl opacity-0 hover:opacity-100 bg-[#ffd24c]/50 dark:bg-purple-400/50 text-white flex justify-center items-center'
+                        className='cursor-pointer absolute inset-0 m-auto w-full h-hull rounded-2xl opacity-0 group-hover:opacity-100 bg-[#ffd24c]/50 dark:bg-purple-400/50 flex justify-center items-center'
                       >
-                        <CarouselIcon />
+                        <div className='transition duration-500 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100'>
+                          <CarouselIcon />
+                        </div>
                       </div>
                     )}
                   </div>
@@ -86,7 +91,7 @@ const ProjectList = () => {
                   <div className='w-full flex md:justify-start xxs:justify-center mt-2 flex-wrap'>
                     {module.map((lib: string, index: number) => (
                       <div
-                        className='w-auto py-1 px-2 sm:m-2 xxs:m-1 lg:text-sm xxs:text-xs text-black bg-[#ffd24c]  dark:bg-gray-500 dark:text-white rounded-md shadow-md first:ml-0'
+                        className='w-auto py-1 px-2 sm:m-2 m-1 text-xs xxs:m-1 lg:text-sm xxs:text-xs text-black bg-[#ffd24c]  dark:bg-gray-500 dark:text-white rounded-md shadow-md first:ml-0'
                         key={index}
                       >
                         {lib}
