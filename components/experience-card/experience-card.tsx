@@ -58,13 +58,13 @@ const ExperienceCard = () => {
   };
 
   return (
-    <FadeInBottom isList={false}>
-      <div className='relative'>
-        <Parallax offset={110}>
-          <div className='absolute 2xl:-top-56 xl:-top-44 lg:-top-36 md:-top-28 sm:-top-24 xs:-top-20 xxs:-top-16'>
-            <SectionTitle number='03' title='Experiences' />
-          </div>
-        </Parallax>
+    <div className='relative'>
+      <Parallax offset={110}>
+        <div className='absolute 2xl:-top-56 xl:-top-44 lg:-top-36 md:-top-28 sm:-top-24 xs:-top-20 xxs:-top-16'>
+          <SectionTitle number='03' title='Experiences' />
+        </div>
+      </Parallax>
+      <FadeInBottom isList={false}>
         <Parallax offset={80}>
           <div className='exp-card-container w-full bg-blue-400 dark:bg-card-bg p-5 rounded-2xl flex sm:flex-row xxs:flex-col lg:h-[404px] xs:h-[500px] xxs:h-auto shadow-xl'>
             <div className='relative flex justify-start sm:flex-col xxs:flex-row md:w-max xxs:overflow-x-visible'>
@@ -114,8 +114,8 @@ const ExperienceCard = () => {
             })}
           </div>
         </Parallax>
-      </div>
-    </FadeInBottom>
+      </FadeInBottom>
+    </div>
   );
 };
 

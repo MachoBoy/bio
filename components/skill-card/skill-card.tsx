@@ -6,18 +6,18 @@ import SkillCardItem from './skill-card-item';
 
 const SkillCard = () => {
   return (
-    <FadeInBottom isList={false}>
-      <div className='relative'>
-        <Parallax offset={80}>
-          <div className='absolute -top-14 2xl:-top-44 xl:-top-36 lg:-top-28 md:-top-24 sm:-top-20 xs:-top-16 xxs:-top-14'>
-            <SectionTitle number='02' title='Skills' />
-          </div>
-        </Parallax>
+    <div className='relative'>
+      <Parallax offset={80}>
+        <div className='absolute -top-14 2xl:-top-44 xl:-top-36 lg:-top-28 md:-top-24 sm:-top-20 xs:-top-16 xxs:-top-14'>
+          <SectionTitle number='02' title='Skills' />
+        </div>
+      </Parallax>
+      <FadeInBottom isList={false}>
         <Parallax offset={50}>
           <div className='z-10 skill-card-container flex justify-center flex-row flex-wrap h-fit'>
             {SkillCardItem.map((item, index) => (
               <div
-                className='flex-col w-20 h-20 xl:w-48 lg:w-40 md:w-32 md:h-36 sm:w-28 sm:h-28 xs:w-24 xs:h-24 xxs:w-20 xxs:h-20 rounded-xl bg-light-blue-2 dark:bg-card-bg hover:bg-light-blue dark:hover:bg-purple-400 m-2 p-3 flex justify-center items-center shadow-xl hover:shadow-lg transition-all'
+                className='flex-col w-20 h-20 xl:w-48 lg:w-40 md:w-32 md:h-36 sm:w-28 sm:h-v28 xs:w-24 xs:h-24 xxs:w-20 xxs:h-20 rounded-xl bg-light-blue-2 dark:bg-card-bg hover:bg-light-blue dark:hover:bg-purple-400 m-2 p-3 flex justify-center items-center shadow-xl hover:shadow-lg transition-all'
                 key={index}
               >
                 <div className='text-center w-full'>
@@ -40,8 +40,8 @@ const SkillCard = () => {
             ))}
           </div>
         </Parallax>
-      </div>
-    </FadeInBottom>
+      </FadeInBottom>
+    </div>
   );
 };
 
