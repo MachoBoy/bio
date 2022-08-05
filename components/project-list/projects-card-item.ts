@@ -91,7 +91,7 @@ const ProjectCardItem = [
   {
     thumbnail: '/reventures1.png',
     name: 'RE:VENTURES',
-    desc: 'UNDER DEVELOPMENT: The official website that company name RE:VENTURES ',
+    desc: 'The official website of company called RE:VENTURES. The project used Next.js(SSR), GraphQL, Wordpress as Headless CMS and WPGraqQL. Admin can post news, events, and informations using wordpress.',
     module: [
       'Next JS',
       'Typescript',
