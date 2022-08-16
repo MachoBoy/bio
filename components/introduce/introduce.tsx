@@ -20,8 +20,8 @@ const Introduce = () => {
             <span className='text-light-blue dark:text-white underline underline-offset-2'>
               Front End Developer,
             </span>
-            <br /> who love to support community with user-friendly websites and
-            web applications. <br />
+            <br /> who love to support community with user-friendly applications{' '}
+            <br />
             I&apos;m from Busan, Korea 🇰🇷 and currently staying in Vancouver,
             Canada 🇨🇦
             <br /> I have developed the{' '}
@@ -32,17 +32,20 @@ const Introduce = () => {
             <span className='text-light-blue dark:text-white underline underline-offset-2'>
               delivered +100 landing pages with animations.
             </span>{' '}
-            Recently, I have experienced{' '}
-            <span className='text-light-blue dark:text-white underline underline-offset-2'>
-              designing the web application to deploy
-            </span>{' '}
+            Recently, I have experienced designing the web application to deploy
             a project with Firebase. I love to{' '}
             <span className='text-light-blue dark:text-white underline underline-offset-2'>
               study and implement
             </span>{' '}
-            new technology. I don&apos;t like to settle and try to move{' '}
+            new technology.
             <span className='text-light-blue dark:text-white underline underline-offset-2'>
-              forward in my career path.
+              {' '}
+              Keep challenging the unfamiliar way.{' '}
+            </span>
+            Do not wait until everything is perfect, Even if it&apos;s not
+            enough,{' '}
+            <span className='text-light-blue dark:text-white underline underline-offset-2'>
+              let&apos;s continue to try new things.
             </span>
           </p>
         </div>
