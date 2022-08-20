@@ -5,7 +5,7 @@ const Introduce = () => {
   return (
     <div className='relative'>
       <Parallax offset={100}>
-        <div className='absolute 2xl:-top-44 xl:-top-36 lg:-top-32 md:-top-24 xxs:-top-20'>
+        <div className='absolute 2xl:-top-52 xl:-top-36 lg:-top-32 md:-top-24 xxs:-top-20'>
           <SectionTitle number='01' title='About Me' />
         </div>
       </Parallax>

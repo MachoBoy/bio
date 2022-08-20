@@ -1,64 +1,53 @@
-import Slider from 'react-slick';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { ProjectCardItem } from '../project-list/projects-card-item';
+interface Props {
+  activeId: string;
+  closeProjectCard: Function;
+}
 
-const settings = {
-  dots: false,
-  arrows: false,
-  infinite: true,
-  autoplay: true,
-  speed: 300,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-};
-
-const ProjectDetail = (props: any) => {
+const ProjectDetail = ({ activeId, closeProjectCard }: Props) => {
+  const project = ProjectCardItem.find(({ id }) => activeId === id);
+  if (!project) {
+    return null;
+  }
+  const { thumbnail, name } = project;
   return (
-    <div className='flex flex-col align-center items-center'>
-      <div className='w-5/6'>
-        <div className='w-full text-center my-5'>
-          <h3 className='block lg:text-3xl sm:text-2xl xxs:text-lg text-purple-400'>
-            {props.item.name}
-          </h3>
-        </div>
-        <Slider {...settings}>
-          {props.item.images.map((image: string, index: number) => (
+    <>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className='rounded-2xl absolute top-0 left-0 w-full h-full z-50 bg-white'
+      >
+        <div className='rounded-t-xl w-full h-12 bg-gray-300 dark:bg-card-bg flex justify-start items-center px-3'>
+          <div className='flex flex-row'>
             <div
-              key={index}
-              className={`${image} w-full lg:h-96 md:h-72 sm:h-56 xxs:h-48 bg-top bg-contain bg-no-repeat`}
-            ></div>
-          ))}
-        </Slider>
-        <div className='flex justify-center mt-2 flex-wrap'>
-          {props.item.module.map((lib: string, index: number) => (
-            <div
-              className='w-auto py-1 px-2 sm:m-2 xxs:m-1 lg:text-sm xxs:text-xs text-white bg-gray-500 rounded-md shadow-md'
-              key={index}
+              className='cursor-pointer w-6 h-6 rounded-full bg-[#FF605C] text-center text-black shadow-[inset_0_0px_5px_rgba(0,0,0,0.6)]'
+              onClick={() => closeProjectCard()}
             >
-              {lib}
+              &#10005;
             </div>
-          ))}
+            <div className='w-6 h-6 rounded-full bg-[#FFBD44] mx-3 text-center text-black shadow-[inset_0_0px_5px_rgba(0,0,0,0.6)]'>
+              &#8592;
+            </div>
+            <div className='w-6 h-6 rounded-full bg-[#00CA4E] text-center text-black shadow-[inset_0_0px_5px_rgba(0,0,0,0.6)]'>
+              &#8594;
+            </div>
+          </div>
         </div>
-        <div className='lg:text-lg sm:text-base xxs:text-sm text-white text-center'>
-          <p>{props.item.desc}</p>
+        <div className='relative w-full h-1/2'>
+          <Image
+            src={thumbnail}
+            alt={thumbnail}
+            layout='fill'
+            objectFit='cover'
+            objectPosition='top center'
+          />
         </div>
-        <div className='flex justify-center mt-2 text-center'>
-          <ul>
-            {props.item.links
-              ? props.item.links.map((link: string, index: number) => (
-                  <a
-                    className='text-white hover:text-purple-400 sm:mx-3 xxs:mx-1 sm:text-base xxs:text-sm'
-                    key={index}
-                    href={link}
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    website {index + 1}
-                  </a>
-                ))
-              : null}
-          </ul>
-        </div>
-      </div>
-    </div>
+        <h1 className='text-black'>{name}</h1>
+      </motion.div>
+    </>
   );
 };
 
