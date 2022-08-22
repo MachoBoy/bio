@@ -1,33 +1,30 @@
-import ReactModal from 'react-modal';
-
+import ClientOnlyPortal from './clientOnlyPortal';
+import { motion } from 'framer-motion';
 interface Props {
   children: JSX.Element;
-  isOpen: boolean;
   closeModal: Function;
 }
 
-const style = {
-  overlay: { backgroundColor: 'rgba(0,0,1,0.5)' },
-  content: {
-    width: '70vw',
-    height: '50vh',
-    inset: 0,
-    margin: 'auto',
-    overflow: 'hidden',
-    backgroundColor: 'transparent',
-    border: 'none',
-  },
-};
-
-const Modal = ({ children, isOpen, closeModal }: Props) => {
+const Modal = ({ children, closeModal }: Props) => {
   return (
-    <ReactModal
-      isOpen={isOpen}
-      style={style}
-      onRequestClose={() => closeModal()}
-    >
-      {children}
-    </ReactModal>
+    <>
+      <ClientOnlyPortal selector='#modal'>
+        <div className='fixed inset-0 z-40'>
+          <div
+            className='backdrop absolute bg-black/50 inset-0 z-40'
+            onClick={() => closeModal()}
+          ></div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className='modal z-40 bg-white absolute inset-[10%] rounded-2xl'
+          >
+            {children}
+          </motion.div>
+        </div>
+      </ClientOnlyPortal>
+    </>
   );
 };
 

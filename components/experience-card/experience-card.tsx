@@ -60,17 +60,17 @@ const ExperienceCard = () => {
   return (
     <div className='relative'>
       <Parallax offset={110}>
-        <div className='absolute 2xl:-top-56 xl:-top-44 lg:-top-36 md:-top-28 sm:-top-24 xs:-top-20 xxs:-top-16'>
+        <div className='absolute 2xl:-top-56 xl:-top-44 lg:-top-36 md:-top-28 sm:-top-24 xs:-top-20 -top-16'>
           <SectionTitle number='03' title='Experiences' />
         </div>
       </Parallax>
       <FadeInBottom isList={false}>
         <Parallax offset={80}>
-          <div className='exp-card-container w-full bg-blue-400 dark:bg-card-bg p-5 rounded-2xl flex sm:flex-row xxs:flex-col lg:h-[404px] xs:h-[500px] xxs:h-auto shadow-xl'>
-            <div className='relative flex justify-start sm:flex-col xxs:flex-row md:w-max xxs:overflow-x-visible'>
+          <div className='exp-card-container w-full bg-blue-400 dark:bg-card-bg p-5 rounded-2xl flex sm:flex-row flex-col lg:h-[404px] xs:h-[500px] h-auto shadow-xl'>
+            <div className='relative flex justify-start sm:flex-col flex-row md:w-max overflow-x-visible'>
               {experienceItem.map((item, index) => (
                 <button
-                  className={`block sm:m-3 xxs:m-2 sm:text-left xxs:text-center lg:text-base md:text-sm xxs:text-xs ${
+                  className={`block sm:m-3 m-2 sm:text-left text-center lg:text-base md:text-sm text-xs ${
                     item.isActive
                       ? 'text-[#FFD24C] dark:text-purple-400'
                       : 'text-white'
@@ -85,23 +85,23 @@ const ExperienceCard = () => {
             {experienceItem.map((exp, expIndex) => {
               return exp.isActive ? (
                 <div
-                  className='desc text-white pt-3 sm:pl-6 xxs:pl-2 max-w-3xl w-full'
+                  className='desc text-white pt-3 sm:pl-6 pl-2 max-w-3xl w-full'
                   key={expIndex}
                 >
-                  <div className='sm:text-2xl xxs:text-md'>
+                  <div className='sm:text-2xl text-md'>
                     {exp.position}{' '}
                     <span className='text-[#FFD24C] dark:text-purple-400'>
                       @ {exp.name}
                     </span>
                   </div>
-                  <div className='md:text-lg xxs:text-sm mt-1 sm:mb-5 xxs:mb-2 text-teal-900 dark:text-dusty-grey font-robotoMono'>
+                  <div className='md:text-lg text-sm mt-1 sm:mb-5 mb-2 text-teal-900 dark:text-dusty-grey font-robotoMono'>
                     {exp.date}
                   </div>
                   <div>
                     <ul>
                       {exp.description.map((desc, descKey) => (
                         <li
-                          className="relative pl-8 mb-2 lg:text-xl md:text-lg sm:text-base xxs:text-sm before:content-['>'] before:absolute before:left-0"
+                          className="relative pl-8 mb-2 lg:text-xl md:text-lg sm:text-base text-sm before:content-['>'] before:absolute before:left-0"
                           key={descKey}
                         >
                           {desc}
