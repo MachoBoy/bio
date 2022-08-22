@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { ProjectCardItem } from '../project-list/projects-card-item';
 
 interface Props {
-  id: string;
+  id: number;
   logo: string;
   category: string;
   thumbnail: string;
@@ -19,21 +19,15 @@ const ProjectCard = ({ id, logo, category, thumbnail, name, color }: Props) => {
       boxShadow: 'inset 0px 0px 10px rgba(0,0,0,0.6)',
       y: 0,
       transition: {
-        type: 'spring',
-        duration: 0.5,
+        type: 'tween',
+        duration: 0.3,
       },
     },
     initial: {
-      y: 500,
+      y: 300,
     },
   };
   return (
-    // <Link
-    //   href='/projects/detail/[projectId]'
-    //   passHref
-    //   as={`/projects/detail/${id}`}
-    // >
-    //   <a>
     <motion.div
       initial='initial'
       whileHover='hover'
@@ -60,10 +54,8 @@ const ProjectCard = ({ id, logo, category, thumbnail, name, color }: Props) => {
           </div>
         </div>
       </div>
-      <div className='rounded-3xl absolute inset-0 m-auto w-full h-full bg-black/30 dark:bg-black/80 z-10'></div>
+      <div className='rounded-3xl absolute inset-0 m-auto w-full h-full bg-black/30 dark:bg-black/60 z-10'></div>
     </motion.div>
-    //   </a>
-    // </Link>
   );
 };
 
