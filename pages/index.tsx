@@ -30,7 +30,7 @@ const Home: NextPage = () => {
             <FadeInTop>
               <Section
                 id='About Me'
-                className='flex justify-center items-center min-h-screen w-11/12 xs:w-5/6 xxs:w-11/12 mx-auto'
+                className='flex justify-center items-center min-h-screen w-11/12 xs:w-5/6 mx-auto'
               >
                 <Introduce />
               </Section>
@@ -38,21 +38,21 @@ const Home: NextPage = () => {
 
             <Section
               id='Skills'
-              className='flex justify-center items-center min-h-screen w-11/12 xs:w-5/6 xxs:w-11/12 mx-auto py-0 sm:py-[200px] xxs:py-0'
+              className='flex justify-center items-center min-h-screen w-11/12 xs:w-5/6 mx-auto py-0 sm:py-[200px]'
             >
               <SkillCard />
             </Section>
 
             <Section
               id='Experiences'
-              className='flex justify-center items-center w-11/12 2xl:w-8/12 xs:w-5/6 xxs:w-11/12 min-h-screen mx-auto'
+              className='flex justify-center items-center w-11/12 2xl:w-8/12 xs:w-5/6  min-h-screen mx-auto'
             >
               <ExperienceCard />
             </Section>
 
             <Section
               id='Projects'
-              className='flex justify-center items-center w-11/12 2xl:w-10/12 xs:w-5/6 xxs:w-11/12 sm:py-[200px] xxs:py-[100px]'
+              className='flex justify-center items-center w-11/12 2xl:w-10/12 xs:w-5/6 sm:py-[200px] py-[100px]'
             >
               <ProjectList />
             </Section>

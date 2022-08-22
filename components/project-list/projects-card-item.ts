@@ -108,7 +108,7 @@ export const ProjectCardItem = [
       '/papaya_4.png',
       '/papaya_5.png',
     ],
-    mainLink: 'https://www.papayaplay.com/portal.do',
+    mainLink: 'https://www.papayaplay.com',
     links: undefined,
     color: '#518a6b',
   },

@@ -34,7 +34,7 @@ const Header = ({ isNavOpen, setNavOpen }: Props) => {
 
   return (
     <header
-      className={`transition-colors duration-500 bg-light-white dark:bg-green-cyan fixed top-0 left-0 w-full sm:h-24 xxs:h-20 flex items-center justify-center mx-auto select-auto z-40 ${
+      className={`transition-colors duration-500 bg-light-white dark:bg-green-cyan fixed top-0 left-0 w-full sm:h-24 h-20 flex items-center justify-center mx-auto select-auto z-40 ${
         scrollPosition === 0 ? 'shadow-none' : 'shadow-lg'
       }`}
     >
@@ -52,7 +52,7 @@ const Header = ({ isNavOpen, setNavOpen }: Props) => {
           />
         </div>
         <button
-          className='hamburger w-6 h-8 flex items-center justify-center relative z-50 lg:opacity-0 xxs:opacity-100'
+          className='hamburger w-6 h-8 flex items-center justify-center relative z-50 lg:opacity-0 opacity-100'
           onClick={() => handleNav()}
         >
           <span
@@ -73,7 +73,7 @@ const Header = ({ isNavOpen, setNavOpen }: Props) => {
         </button>
         {/* tablet mobile menu */}
         <aside
-          className={`sm:w-1/2 xxs:w-3/4 h-screen bg-light-white dark:bg-card-bg fixed top-0 bottom-0 right-0 shadow-2xl py-14 px-3 flex items-center transition-all ${
+          className={`sm:w-1/2 w-3/4 h-screen bg-light-white dark:bg-card-bg fixed top-0 bottom-0 right-0 shadow-2xl py-14 px-3 flex items-center transition-all ${
             isNavOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
@@ -144,7 +144,7 @@ const Header = ({ isNavOpen, setNavOpen }: Props) => {
           </nav>
         </aside>
         {/* desktop */}
-        <ul className='nav-element flex-row hidden lg:flex xxs:hidden'>
+        <ul className='nav-element flex-row hidden lg:flex hidden'>
           {sections
             ? sections.map(({ id, onClick, selected }, index) => (
                 <li

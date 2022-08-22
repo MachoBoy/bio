@@ -37,12 +37,12 @@ const ProjectList = () => {
   };
   return (
     <div className='relative'>
-      <div className='absolute 2xl:-top-56 xl:-top-36 lg:-top-28 md:-top-20 sm:-top-16 xs:-top-12 xxs:-top-8'>
+      <div className='absolute 2xl:-top-56 xl:-top-48 lg:-top-40 md:-top-32 xs:-top-24 -top-20'>
         <Parallax offset={40}>
           <SectionTitle number='04' title='Projects' />
         </Parallax>
       </div>
-      <div className='w-full z-10 grid grid-cols-4 gap-4'>
+      <div className='w-full z-10 grid gap-4 2xl:grid-cols-4 sm:grid-cols-3 grid-cols-2'>
         {ProjectCardItem.map(
           ({ id, logo, category, thumbnail, name, color }, index) => (
             <SlideFromBottom2 key={index} order={index}>

@@ -24,6 +24,7 @@
   font-weight: bold;
   font-size: 20px;
   z-index: 2;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .next {
