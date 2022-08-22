@@ -59,13 +59,13 @@ const ProjectDetail = ({
             </div>
             <div className='lg:w-full md:w-1/3 w-full lg:mt-0 md:mt-5 mt-3 lg:text-left text-center'>
               <h2 className='text-base md:text-lg uppercase tracking-wide'>
-                - Description
+                🌟 Description
               </h2>
               <p className='mt-2 xl:text-lg text-sm lg:pl-4 md:pl-0'>{desc}</p>
             </div>
             <div className='lg:w-full w-1/3 md:mt-5 lg:text-left text-center md:block hidden'>
               <h2 className='text-base md:text-lg uppercase tracking-wide'>
-                - Key Features
+                🌟 Key Features
               </h2>
               <ul className='mt-2 list-disc list-inside text-left lg:h-auto lg:overflow-hidden md:h-60 md:overflow-y-auto'>
                 {features?.map((feature, index) => {
@@ -79,9 +79,9 @@ const ProjectDetail = ({
             </div>
             <div className='lg:w-full md:w-1/3 w-full mt-5 lg:text-left text-center'>
               <h2 className='text-base md:text-lg uppercase tracking-wide'>
-                - Tech Stacks
+                🌟 Tech Stacks
               </h2>
-              <div className='md:mt-5 sm:mt-0 gap-1 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-4 justify-items-center'>
+              <div className='md:mt-5 mt-3 sm:gap-5 gap-1 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-4 justify-items-center'>
                 {module.map(({ icon, name }, index) => {
                   return <ModuleIcon key={index} icon={icon} name={name} />;
                 })}
