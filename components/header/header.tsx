@@ -144,7 +144,7 @@ const Header = ({ isNavOpen, setNavOpen }: Props) => {
           </nav>
         </aside>
         {/* desktop */}
-        <ul className='nav-element flex-row hidden lg:flex hidden'>
+        <ul className='nav-element flex-row hidden lg:flex'>
           {sections
             ? sections.map(({ id, onClick, selected }, index) => (
                 <li
