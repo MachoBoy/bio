@@ -16,7 +16,6 @@ const ProjectCard = ({ id, logo, category, thumbnail, name, color }: Props) => {
   const colorBoxMotion = {
     hover: {
       backgroundColor: color,
-      boxShadow: 'inset 0px 0px 10px rgba(0,0,0,0.6)',
       y: 0,
       transition: {
         type: 'tween',
@@ -36,7 +35,7 @@ const ProjectCard = ({ id, logo, category, thumbnail, name, color }: Props) => {
     >
       <motion.div
         variants={colorBoxMotion}
-        className='rounded-3xl z-30 absolute w-full h-full overflow-hidden'
+        className='rounded-3xl z-30 absolute w-full h-full overflow-hidden shadow-[inset_0_0_10px_rgba(0,0,0,0.6)]'
       ></motion.div>
       <div className='absolute w-full h-full z-40'>
         <div className='p-4 sm:p-5 w-full z-20 absolute left-0 top-0 md:text-lg sm:text-sm text-xs md:text-left text-center text-white dark:text-gray-400'>
