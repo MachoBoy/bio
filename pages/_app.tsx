@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     mounted && (
-      <ThemeProvider attribute="class" enableSystem={false}>
+      <ThemeProvider attribute="class">
         <Component {...pageProps} />
       </ThemeProvider>
     )
