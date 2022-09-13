@@ -216,7 +216,7 @@ export const ProjectCardItem = [
     id: 3,
     category: 'Platform',
     logo: '/wr_logo.png',
-    thumbnail: '/warRock_1.png',
+    thumbnail: '/warrock_1.png',
     name: 'WarRock',
     desc: 'The official website of game called WarRock. Developed Web Gacha system to provide more entertainment.',
     features: [
