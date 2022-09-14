@@ -1,18 +1,15 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ProjectCardItem } from '../project-list/projects-card-item';
 
 interface Props {
   id: number;
   logo: string;
   category: string;
-  thumbnail: string;
   name: string;
   color: string;
 }
 
-const ProjectCard = ({ id, logo, category, thumbnail, name, color }: Props) => {
+const ProjectCard = ({ id, logo, category, name, color }: Props) => {
   const colorBoxMotion = {
     hover: {
       backgroundColor: color,

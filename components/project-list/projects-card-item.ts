@@ -1,7 +1,6 @@
 export interface ProjectItemType {
   id: string;
   category: string;
-  thumbnail: string;
   name: string;
   desc: string;
   module: string[];
@@ -14,7 +13,6 @@ export const ProjectCardItem = [
     id: 9,
     category: 'Website',
     logo: '',
-    thumbnail: '/reventures_1.png',
     name: 'RE:VENTURES',
     desc: 'The official website of company called RE:VENTURES. The client requested a feature that upload contents from user inputs and show them on the pages. The headless CMS has implemented using Wordpress.',
     features: [
@@ -47,7 +45,6 @@ export const ProjectCardItem = [
     id: 8,
     category: 'Console',
     logo: '/gorae_logo.png',
-    thumbnail: '/grmk_1.png',
     name: 'Gorae Market Admin Dashboard',
     desc: 'The web application that control over the seafood E-commerce platform called Gorae Market. The most of back end APIs are developed with Firebase Cloud Functions. The payment gateway and shipment tracking systems are implemented using Express',
     features: [
@@ -84,7 +81,6 @@ export const ProjectCardItem = [
     id: 7,
     category: 'Platform',
     logo: '/papaya-logo.png',
-    thumbnail: '/papaya-portal_1.png',
     name: 'Papaya Play Portal',
     desc: 'The web platforms that inform news, events, updates of games, purchase the game cash with cross platform billing APIs (Xsolla, Paypal, etc), manage the game forum based on vanilla forum, connect user to helpdesk',
     features: [
@@ -116,7 +112,6 @@ export const ProjectCardItem = [
     id: 6,
     category: 'Console',
     logo: '/papaya-logo.png',
-    thumbnail: '/papaya-admin_1.png',
     name: 'Papaya Play Admin Dashboard',
     desc: 'An application that give you control over the Papaya Play Portal.',
     features: [
@@ -155,7 +150,6 @@ export const ProjectCardItem = [
     id: 5,
     category: 'Website',
     logo: '/vertigo-logo.png',
-    thumbnail: '/vertigogames_1.png',
     name: 'Vertigo Games',
     desc: 'The official website that introduce the company. Implemented Headless WordPress that manage backend contents while front-end developer access the data via APIs',
     features: [
@@ -186,7 +180,6 @@ export const ProjectCardItem = [
     id: 4,
     category: 'Platform',
     logo: '/uwo-logo.png',
-    thumbnail: '/uwo_1.png',
     name: 'Uncharted Waters Online',
     desc: 'The official website of game called Uncharted Waters Online. I developed the webshop that sells unique items',
     features: [
@@ -216,7 +209,6 @@ export const ProjectCardItem = [
     id: 3,
     category: 'Platform',
     logo: '/wr_logo.png',
-    thumbnail: '/warrock_1.png',
     name: 'WarRock',
     desc: 'The official website of game called WarRock. Developed Web Gacha system to provide more entertainment.',
     features: [
@@ -245,7 +237,6 @@ export const ProjectCardItem = [
     id: 2,
     category: 'Platform',
     logo: '/lt_logo.png',
-    thumbnail: '/latale_1.png',
     name: 'La Tale Online',
     desc: 'The official website of game called LaTale. The game is well known for the BGM, Developed music player into the website',
     features: [
@@ -270,7 +261,6 @@ export const ProjectCardItem = [
     id: 1,
     category: 'E-Commerce',
     logo: '/hiossen-logo.png',
-    thumbnail: '/hiossen_1.png',
     name: 'Hiossen Implant Shop',
     desc: 'An E-commerce platform that registered doctor can order the implant equipments. The option and quantity of items can be configure in shopify admin panel. View order status and history in account',
     features: ['Shop Products relates to dental implant'],

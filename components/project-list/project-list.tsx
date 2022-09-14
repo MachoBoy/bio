@@ -43,22 +43,19 @@ const ProjectList = () => {
         </Parallax>
       </div>
       <div className='w-full z-10 grid gap-4 2xl:grid-cols-4 sm:grid-cols-3 grid-cols-2'>
-        {ProjectCardItem.map(
-          ({ id, logo, category, thumbnail, name, color }, index) => (
-            <SlideFromBottom2 key={index} order={index}>
-              <div onClick={() => openProjectCard(id)}>
-                <ProjectCard
-                  id={id}
-                  logo={logo}
-                  category={category}
-                  thumbnail={thumbnail}
-                  name={name}
-                  color={color}
-                />
-              </div>
-            </SlideFromBottom2>
-          )
-        )}
+        {ProjectCardItem.map(({ id, logo, category, name, color }, index) => (
+          <SlideFromBottom2 key={index} order={index}>
+            <div onClick={() => openProjectCard(id)}>
+              <ProjectCard
+                id={id}
+                logo={logo}
+                category={category}
+                name={name}
+                color={color}
+              />
+            </div>
+          </SlideFromBottom2>
+        ))}
       </div>
       <AnimatePresence>
         {activeId && (
