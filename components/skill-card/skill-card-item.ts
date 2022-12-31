@@ -55,6 +55,10 @@ const skillCardItem = [
     icon: '/firebase.png',
     name: 'Firebase',
   },
+  {
+    icon: '/laravel.png',
+    name: 'Laravel',
+  },
 ];
 
 export default skillCardItem;

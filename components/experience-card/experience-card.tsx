@@ -6,9 +6,23 @@ import SectionTitle from '../section-title/section-title';
 const ExperienceCard = () => {
   const [experienceItem, setExperienceItem] = useState([
     {
+      name: 'Pixieset',
+      position: 'Front End Engineer',
+      date: '2022 September - Current',
+      description: [
+        'Develop features for platform called Studio Manager and Admin dashboard.',
+        'Not only developing the Front end side, also participating in Back end side.',
+        'Review codes, provide the feedbacks to improve the development.',
+        'Write and run developed features and unit test cases to verify to find troubleshoot, debug and update with latest version.',
+        'Write technical documentation for developed tasks.',
+        'Participating retrospective to improve the development and needs for sprints.',
+      ],
+      isActive: true,
+    },
+    {
       name: 'GRMK',
       position: 'Full Stack Developer',
-      date: '2021 August - Current',
+      date: '2021 August - 2022 August',
       description: [
         'Designed client-side and server-side architecture',
         'Created the admin dashboard of the E-commerce platform.',
@@ -17,7 +31,7 @@ const ExperienceCard = () => {
         'Supervised, led, and mentored 3 junior team member to achieve high performance.',
         'Write technical documentation.',
       ],
-      isActive: true,
+      isActive: false,
     },
     {
       name: 'Vertigo Games',
@@ -66,11 +80,11 @@ const ExperienceCard = () => {
       </Parallax>
       <FadeInBottom isList={false}>
         <Parallax offset={80}>
-          <div className='exp-card-container w-full bg-blue-400 dark:bg-card-bg p-5 rounded-2xl flex sm:flex-row flex-col lg:h-[404px] xs:h-[500px] h-auto shadow-xl'>
+          <div className='exp-card-container w-full bg-blue-400 dark:bg-card-bg p-5 rounded-2xl flex sm:flex-row flex-col xl:h-[404px] lg:h-[500px] xs:h-[500px] h-auto shadow-xl'>
             <div className='relative flex justify-start sm:flex-col flex-row md:w-max overflow-x-visible'>
               {experienceItem.map((item, index) => (
                 <button
-                  className={`block sm:m-3 m-2 sm:text-left text-center lg:text-base md:text-sm text-xs ${
+                  className={`block sm:m-3 m-2 sm:text-left text-center lg:text-base md:text-sm text-sm ${
                     item.isActive
                       ? 'text-[#FFD24C] dark:text-purple-400'
                       : 'text-white'
@@ -101,7 +115,7 @@ const ExperienceCard = () => {
                     <ul>
                       {exp.description.map((desc, descKey) => (
                         <li
-                          className="relative pl-8 mb-2 lg:text-xl md:text-lg sm:text-base text-sm before:content-['>'] before:absolute before:left-0"
+                          className="relative pl-8 mb-2 tracking-wide lg:text-xl md:text-lg sm:text-base text-sm before:content-['>'] before:absolute before:left-0"
                           key={descKey}
                         >
                           {desc}

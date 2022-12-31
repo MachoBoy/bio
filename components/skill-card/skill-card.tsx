@@ -26,9 +26,9 @@ const SkillCard = () => {
                       <Image
                         src={item.icon}
                         alt={item.name}
-                        layout='responsive'
+                        objectFit='contain'
                         width='64'
-                        height='64'
+                        height='54'
                       />
                     ) : null}
                   </div>
