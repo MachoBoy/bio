@@ -1,7 +1,8 @@
 import Image from 'next/image';
+import { useSyncExternalStore, type Dispatch, type SetStateAction } from 'react';
 import { useTheme } from 'next-themes';
 import useScrollPosition from '../../hook/useScrollPosition';
-import { useScrollSections } from 'react-scroll-section';
+import { useScrollSections } from '../scroll-section/scroll-section';
 import GithubIcon from '../github-icon/GithubIcon';
 import LinkedInIcon from '../linkedin-icon/LinkedinIcon';
 import MoonIcon from '../moon-icon/moonIcon';
@@ -9,13 +10,42 @@ import SunIcon from '../sun-icon/sunIcon';
 
 interface Props {
   isNavOpen: boolean;
-  setNavOpen: Function;
+  setNavOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+const emptySubscribe = () => () => {};
+
+function ThemeToggle({ onToggle }: { onToggle?: () => void }) {
+  const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
+  const { theme, setTheme } = useTheme();
+  const isLight = mounted && theme === 'light';
+
+  return (
+    <button
+      className='flex items-center p-4 text-teal-900 dark:text-white dark:hover:text-light-orange hover:text-purple-400 cursor-pointer'
+      aria-label={isLight ? 'Switch to dark theme' : 'Switch to light theme'}
+      onClick={() => {
+        if (!mounted) return;
+        setTheme(isLight ? 'dark' : 'light');
+        onToggle?.();
+      }}
+    >
+      {mounted ? (
+        isLight ? (
+          <MoonIcon />
+        ) : (
+          <SunIcon />
+        )
+      ) : (
+        <span className='inline-block h-6 w-6' />
+      )}
+    </button>
+  );
 }
 
 const Header = ({ isNavOpen, setNavOpen }: Props) => {
   const scrollPosition = useScrollPosition();
   const sections = useScrollSections();
-  const { theme, setTheme } = useTheme();
 
   const handleNav = () => {
     setNavOpen(!isNavOpen);
@@ -45,10 +75,11 @@ const Header = ({ isNavOpen, setNavOpen }: Props) => {
         >
           <Image
             src='/jplogo.png'
-            layout='responsive'
             width={80}
             height={80}
             alt='logo'
+            priority
+            className='h-auto w-full'
           />
         </div>
         <button
@@ -118,27 +149,7 @@ const Header = ({ isNavOpen, setNavOpen }: Props) => {
                 </div>
               </li>
               <li className='flex justify-center'>
-                {theme === 'light' ? (
-                  <button
-                    className='flex items-center p-4 text-teal-900 dark:text-white dark:hover:text-light-orange hover:text-purple-400 cursor-pointer'
-                    onClick={() => {
-                      setTheme('dark');
-                      setNavOpen(false);
-                    }}
-                  >
-                    <MoonIcon />
-                  </button>
-                ) : (
-                  <button
-                    className='flex items-center p-4 text-teal-900 dark:text-white dark:hover:text-light-orange hover:text-purple-400 cursor-pointer'
-                    onClick={() => {
-                      setTheme('light');
-                      setNavOpen(false);
-                    }}
-                  >
-                    <SunIcon />
-                  </button>
-                )}
+                <ThemeToggle onToggle={() => setNavOpen(false)} />
               </li>
             </ul>
           </nav>
@@ -183,21 +194,7 @@ const Header = ({ isNavOpen, setNavOpen }: Props) => {
             </a>
           </li>
           <li>
-            {theme === 'light' ? (
-              <button
-                className='flex items-center p-4 text-teal-900 dark:text-white dark:hover:text-light-orange hover:text-purple-400 cursor-pointer'
-                onClick={() => setTheme('dark')}
-              >
-                <MoonIcon />
-              </button>
-            ) : (
-              <button
-                className='flex items-center p-4 text-teal-900 dark:text-white dark:hover:text-light-orange hover:text-purple-400 cursor-pointer'
-                onClick={() => setTheme('light')}
-              >
-                <SunIcon />
-              </button>
-            )}
+            <ThemeToggle />
           </li>
         </ul>
       </nav>

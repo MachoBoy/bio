@@ -1,14 +1,12 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { Slider } from '../slider/slider';
 import ModuleIcon from '../module-icon/module-icon';
 import { ProjectCardItem } from '../project-list/projects-card-item';
 interface Props {
   activeId: number;
-  closeProjectCard: Function;
-  prevProject: Function;
-  nextProject: Function;
+  closeProjectCard: () => void;
+  prevProject: (id: number) => void;
+  nextProject: (id: number) => void;
 }
 
 const ProjectDetail = ({
@@ -90,13 +88,13 @@ const ProjectDetail = ({
           </div>
         </div>
         {mainLink && (
-          <Link href={mainLink}>
-            <a
-              target='_blank'
-              className='rounded-b-xl w-full md:h-16 md:text-2xl text-lg h-12 font-semibold bg-blue-400/80 hover:bg-gray-300 text-white hover:text-blue-400 dark:bg-purple-400/80 dark:hover:bg-card-bg dark:text-white dark:hover:text-purple-400 flex justify-center items-center transition-all'
-            >
-              {mainLink}
-            </a>
+          <Link
+            href={mainLink}
+            target='_blank'
+            rel='noopener noreferrer'
+            className='rounded-b-xl w-full md:h-16 md:text-2xl text-lg h-12 font-semibold bg-blue-400/80 hover:bg-gray-300 text-white hover:text-blue-400 dark:bg-purple-400/80 dark:hover:bg-card-bg dark:text-white dark:hover:text-purple-400 flex justify-center items-center transition-all'
+          >
+            {mainLink}
           </Link>
         )}
       </div>

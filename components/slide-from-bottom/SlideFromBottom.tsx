@@ -1,8 +1,8 @@
-import { useRef } from 'react';
+import { useRef, type ReactElement } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 interface Props {
-  children: JSX.Element;
+  children: ReactElement;
   order: number;
 }
 

@@ -1,19 +1,19 @@
-import { useRef, useEffect, useState } from 'react';
+import { useSyncExternalStore, type ReactElement } from 'react';
 import { createPortal } from 'react-dom';
 
 interface Props {
-  children: JSX.Element;
+  children: ReactElement;
   selector: string;
 }
 
+const emptySubscribe = () => () => {};
+
 export default function ClientOnlyPortal({ children, selector }: Props) {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const [mounted, setMounted] = useState(false);
+  const mountNode = useSyncExternalStore(
+    emptySubscribe,
+    () => document.querySelector(selector),
+    () => null
+  );
 
-  useEffect(() => {
-    ref.current = document.querySelector(selector);
-    setMounted(true);
-  }, [selector]);
-
-  return mounted && ref.current ? createPortal(children, ref.current) : null;
+  return mountNode ? createPortal(children, mountNode) : null;
 }

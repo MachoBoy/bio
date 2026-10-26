@@ -1,7 +1,11 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { wrap } from 'popmotion';
+
+const wrap = (min: number, max: number, value: number) => {
+  const range = max - min;
+  return ((((value - min) % range) + range) % range) + min;
+};
 
 const variants = {
   enter: (direction: number) => {

@@ -6,12 +6,8 @@ import SkillCardItem from './skill-card-item';
 
 const SkillCard = () => {
   return (
-    <div className='relative'>
-      <Parallax offset={80}>
-        <div className='absolute -top-14 2xl:-top-44 xl:-top-36 lg:-top-28 md:-top-24 sm:-top-20 xs:-top-16'>
-          <SectionTitle number='02' title='Skills' />
-        </div>
-      </Parallax>
+    <div className='relative w-full'>
+      <SectionTitle number='02' title='Skills' />
       <FadeInBottom isList={false}>
         <Parallax offset={50}>
           <div className='z-10 skill-card-container flex justify-center flex-row flex-wrap h-fit'>
@@ -26,9 +22,9 @@ const SkillCard = () => {
                       <Image
                         src={item.icon}
                         alt={item.name}
-                        objectFit='contain'
-                        width='64'
-                        height='54'
+                        fill
+                        sizes='64px'
+                        className='object-contain'
                       />
                     ) : null}
                   </div>

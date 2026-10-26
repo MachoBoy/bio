@@ -1,7 +1,8 @@
+import { type ReactElement } from 'react';
 import { motion } from 'framer-motion';
 
 interface Props {
-  children: JSX.Element;
+  children: ReactElement;
   order: number;
 }
 
@@ -14,7 +15,11 @@ const SlideFromBottom2 = ({ children, order }: Props) => {
     in: {
       opacity: 1,
       y: 0,
-      transition: { type: 'linear', delay: 0.2 * order },
+      transition: {
+        type: 'tween' as const,
+        ease: 'linear' as const,
+        delay: 0.2 * order,
+      },
     },
   };
   return (

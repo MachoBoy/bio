@@ -7,7 +7,7 @@ export default function Document() {
         <link
           rel="stylesheet"
           as="style"
-          crossOrigin="true"
+          crossOrigin="anonymous"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.4/dist/web/static/pretendard.css"
         />
       </Head>

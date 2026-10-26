@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { NextPage } from 'next';
-import { ScrollingProvider, Section } from 'react-scroll-section';
+import { ScrollingProvider, Section } from '../components/scroll-section/scroll-section';
 import Head from 'next/head';
 import Header from '../components/header/header';
 import ExperienceCard from '../components/experience-card/experience-card';
@@ -44,7 +44,7 @@ const Home: NextPage = () => {
 
             <Section
               id='Experiences'
-              className='flex justify-center items-center w-11/12 2xl:w-8/12 xs:w-5/6  min-h-screen mx-auto'
+              className='flex justify-center items-center min-h-screen w-11/12 xs:w-5/6 mx-auto'
             >
               <ExperienceCard />
             </Section>

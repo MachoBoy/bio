@@ -7,15 +7,12 @@ const ExperienceCard = () => {
   const [experienceItem, setExperienceItem] = useState([
     {
       name: 'Pixieset',
-      position: 'Front End Engineer',
+      position: 'Software Engineer',
       date: '2022 September - Current',
       description: [
-        'Develop features for platform called Studio Manager and Admin dashboard.',
-        'Not only developing the Front end side, also participating in Back end side.',
-        'Review codes, provide the feedbacks to improve the development.',
-        'Write and run developed features and unit test cases to verify to find troubleshoot, debug and update with latest version.',
-        'Write technical documentation for developed tasks.',
-        'Participating retrospective to improve the development and needs for sprints.',
+        'Build the Studio Manager platform and its admin dashboard.',
+        'Developed the Studio Manager mobile app.',
+        'Work on both the front end and the back end of Studio Manager.',
       ],
       isActive: true,
     },
@@ -24,12 +21,9 @@ const ExperienceCard = () => {
       position: 'Full Stack Developer',
       date: '2021 August - 2022 August',
       description: [
-        'Designed client-side and server-side architecture',
-        'Created the admin dashboard of the E-commerce platform.',
-        'Build features and applications with a mobile responsive design.',
-        'Test application to find troubleshoot, debug and update with latest version.',
-        'Supervised, led, and mentored 3 junior team member to achieve high performance.',
-        'Write technical documentation.',
+        'Built the Gorae Market admin for a seafood commerce platform, covering products, coupons, reviews, and shipments.',
+        'Implemented payment and shipment-tracking APIs with Express and Firebase.',
+        'Mentored 3 junior developers.',
       ],
       isActive: false,
     },
@@ -38,12 +32,9 @@ const ExperienceCard = () => {
       position: 'Front End Developer',
       date: '2018 January - 2022 March',
       description: [
-        'Delivered 100+ projects of landing pages with mobile responsive design for game services.',
-        'Built 10+ reusable templates to support email marketing campaigns and promotions.',
-        'Developed functions and maintain client side game platform.',
-        'Created the admin dashboard of the game platform services.',
-        'Built reusable code and libraries for future use.',
-        'Optimize the speed and scalability of the applications.',
+        'Built Papaya Play, a game portal for news, events, and cross-platform billing, and its admin dashboard.',
+        'Shipped game sites for Uncharted Waters Online, WarRock, and La Tale, including the web shop, gacha, and music player.',
+        'Delivered 100+ landing pages and 10+ email templates for game campaigns.',
       ],
       isActive: false,
     },
@@ -52,16 +43,14 @@ const ExperienceCard = () => {
       position: 'Front End Developer',
       date: '2016 December - 2017 July',
       description: [
-        'Created E-commerce platform with Shopify.',
-        'Generate custom Shopify themes and modify pre-existing templates based on brand objectives.',
-        'Connect with marketing tools, platforms APIs, and apps to optimize the store for functionalities.',
+        'Built a Shopify store where registered doctors order implant equipment.',
+        'Set up product options and order history in each clinic account.',
       ],
       isActive: false,
     },
   ]);
 
   const handleExpItem = (index: number) => {
-    console.log(index);
     const modifyExpItem = experienceItem.map((exp, expIndex) => {
       if (expIndex === index) {
         return { ...exp, isActive: true };
@@ -72,16 +61,12 @@ const ExperienceCard = () => {
   };
 
   return (
-    <div className='relative'>
-      <Parallax offset={110}>
-        <div className='absolute 2xl:-top-56 xl:-top-44 lg:-top-36 md:-top-28 sm:-top-24 xs:-top-20 -top-16'>
-          <SectionTitle number='03' title='Experiences' />
-        </div>
-      </Parallax>
+    <div className='relative w-full'>
+      <SectionTitle number='03' title='Experiences' />
       <FadeInBottom isList={false}>
         <Parallax offset={80}>
-          <div className='exp-card-container w-full bg-blue-400 dark:bg-card-bg p-5 rounded-2xl flex sm:flex-row flex-col xl:h-[404px] lg:h-[500px] xs:h-[500px] h-auto shadow-xl'>
-            <div className='relative flex justify-start sm:flex-col flex-row md:w-max overflow-x-visible'>
+          <div className='exp-card-container w-full bg-blue-400 dark:bg-card-bg p-5 rounded-2xl flex sm:flex-row flex-col h-auto items-start shadow-xl'>
+            <div className='relative flex shrink-0 justify-start sm:flex-col flex-row'>
               {experienceItem.map((item, index) => (
                 <button
                   className={`block sm:m-3 m-2 sm:text-left text-center lg:text-base md:text-sm text-sm ${
@@ -96,11 +81,15 @@ const ExperienceCard = () => {
                 </button>
               ))}
             </div>
-            {experienceItem.map((exp, expIndex) => {
-              return exp.isActive ? (
+            <div className='grid w-full min-w-0 flex-1'>
+              {experienceItem.map((exp, expIndex) => (
                 <div
-                  className='desc text-white pt-3 sm:pl-6 pl-2 max-w-3xl w-full'
+                  className={`desc col-start-1 row-start-1 min-w-0 text-white pt-3 sm:pl-6 pl-2 ${
+                    exp.isActive ? '' : 'invisible'
+                  }`}
                   key={expIndex}
+                  aria-hidden={!exp.isActive}
+                  inert={exp.isActive ? undefined : true}
                 >
                   <div className='sm:text-2xl text-md'>
                     {exp.position}{' '}
@@ -111,21 +100,19 @@ const ExperienceCard = () => {
                   <div className='md:text-lg text-sm mt-1 sm:mb-5 mb-2 text-teal-900 dark:text-dusty-grey font-robotoMono'>
                     {exp.date}
                   </div>
-                  <div>
-                    <ul>
-                      {exp.description.map((desc, descKey) => (
-                        <li
-                          className="relative pl-8 mb-2 tracking-wide lg:text-xl md:text-lg sm:text-base text-sm before:content-['>'] before:absolute before:left-0"
-                          key={descKey}
-                        >
-                          {desc}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <ul>
+                    {exp.description.map((desc, descKey) => (
+                      <li
+                        className="relative pl-8 mb-2 tracking-wide break-words lg:text-xl md:text-lg sm:text-base text-sm before:content-['>'] before:absolute before:left-0"
+                        key={descKey}
+                      >
+                        {desc}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              ) : null;
-            })}
+              ))}
+            </div>
           </div>
         </Parallax>
       </FadeInBottom>

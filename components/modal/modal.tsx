@@ -1,8 +1,9 @@
+import type { ReactElement } from 'react';
 import ClientOnlyPortal from './clientOnlyPortal';
 import { motion } from 'framer-motion';
 interface Props {
-  children: JSX.Element;
-  closeModal: Function;
+  children: ReactElement;
+  closeModal: () => void;
 }
 
 const Modal = ({ children, closeModal }: Props) => {

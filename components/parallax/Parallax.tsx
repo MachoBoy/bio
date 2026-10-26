@@ -1,4 +1,4 @@
-import { ReactNode, useState, useRef, useEffect } from 'react';
+import { ReactNode, useState, useRef, useEffect, type ReactElement } from 'react';
 import {
   motion,
   useScroll,
@@ -12,18 +12,16 @@ type ParallaxProps = {
   offset: number;
 };
 
-const Parallax = ({ children, offset }: ParallaxProps): JSX.Element => {
+const Parallax = ({ children, offset }: ParallaxProps): ReactElement => {
   const prefersReducedMotion = useReducedMotion();
   const [elementTop, setElementTop] = useState(0);
   const [clientHeight, setClientHeight] = useState(0);
-  const ref: any = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   const { scrollY } = useScroll();
 
   const initial = elementTop - clientHeight;
   const final = elementTop + offset;
-
-  // console.log('when y is', initial, final, offset, -offset);
 
   const yRange = useTransform(scrollY, [initial, final], [offset, -offset]);
 
@@ -31,16 +29,16 @@ const Parallax = ({ children, offset }: ParallaxProps): JSX.Element => {
 
   useEffect(() => {
     const element = ref.current;
-    const onResize = () => {
-      setElementTop(
-        element.getBoundingClientRect().top + window.scrollY ||
-          setClientHeight(window.innerHeight)
-      );
+    if (!element) return;
+
+    const measure = () => {
+      setElementTop(element.getBoundingClientRect().top + window.scrollY);
+      setClientHeight(window.innerHeight);
     };
-    onResize();
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
-  }, [ref]);
+    measure();
+    window.addEventListener('resize', measure);
+    return () => window.removeEventListener('resize', measure);
+  }, []);
 
   if (prefersReducedMotion) {
     return <>{children}</>;

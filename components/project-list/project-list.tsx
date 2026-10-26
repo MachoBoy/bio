@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Modal from '../modal/modal';
-import Parallax from '../parallax/Parallax';
 import SectionTitle from '../section-title/section-title';
 import ProjectCard from '../project-card/project-card';
 import { ProjectCardItem } from './projects-card-item';
@@ -10,18 +9,27 @@ import ProjectDetail from '../project-detail/project-detail';
 
 const ProjectList = () => {
   const [activeId, setActiveId] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (activeId === null) return;
+    const { body } = document;
+    const previousOverflow = body.style.overflow;
+    body.style.overflow = 'hidden';
+    return () => {
+      body.style.overflow = previousOverflow;
+    };
+  }, [activeId]);
+
   const openProjectCard = (id: number) => {
     setActiveId(id);
-    document.body.style.overflow = 'hidden';
   };
   const closeProjectCard = () => {
     setActiveId(null);
-    document.body.style.overflow = 'unset';
   };
 
   const prevProject = (id: number) => {
     const itemLength = ProjectCardItem.length;
-    let prev = id + 1;
+    const prev = id + 1;
     if (prev > itemLength) {
       return setActiveId(1);
     }
@@ -29,25 +37,20 @@ const ProjectList = () => {
   };
   const nextProject = (id: number) => {
     const itemLength = ProjectCardItem.length;
-    let next = id - 1;
+    const next = id - 1;
     if (next === 0) {
       return setActiveId(itemLength);
     }
     return setActiveId(next);
   };
   return (
-    <div className='relative'>
-      <div className='absolute 2xl:-top-56 xl:-top-48 lg:-top-40 md:-top-32 xs:-top-24 -top-20'>
-        <Parallax offset={40}>
-          <SectionTitle number='04' title='Projects' />
-        </Parallax>
-      </div>
-      <div className='w-full z-10 grid gap-4 2xl:grid-cols-4 sm:grid-cols-3 grid-cols-2'>
+    <div className='relative w-full'>
+      <SectionTitle number='04' title='Projects' />
+      <div className='w-full z-10 grid gap-2 sm:gap-4 2xl:grid-cols-4 sm:grid-cols-3 grid-cols-2'>
         {ProjectCardItem.map(({ id, logo, category, name, color }, index) => (
           <SlideFromBottom2 key={index} order={index}>
             <div onClick={() => openProjectCard(id)}>
               <ProjectCard
-                id={id}
                 logo={logo}
                 category={category}
                 name={name}

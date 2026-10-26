@@ -1,7 +1,7 @@
-import { useRef } from 'react';
+import { useRef, type ReactElement } from 'react';
 import { motion, useScroll } from 'framer-motion';
 interface Props {
-  children: JSX.Element;
+  children: ReactElement;
   isList: boolean;
 }
 

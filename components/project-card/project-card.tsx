@@ -2,20 +2,19 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 interface Props {
-  id: number;
   logo: string;
   category: string;
   name: string;
   color: string;
 }
 
-const ProjectCard = ({ id, logo, category, name, color }: Props) => {
+const ProjectCard = ({ logo, category, name, color }: Props) => {
   const colorBoxMotion = {
     hover: {
       backgroundColor: color,
       y: 0,
       transition: {
-        type: 'tween',
+        type: 'tween' as const,
         duration: 0.3,
       },
     },
@@ -28,7 +27,7 @@ const ProjectCard = ({ id, logo, category, name, color }: Props) => {
       initial='initial'
       whileHover='hover'
       animate='initial'
-      className='overflow-hidden cursor-pointer rounded-3xl block my-auto xl:w-[300px] xl:h-[300px] lg:w-[250px] lg:h-[250px] md:w-[200px] md:h-[200px] xs:w-[150px] xs:h-[150px] w-[120px] h-[120px] relative xs:block'
+      className='overflow-hidden cursor-pointer rounded-3xl relative mx-auto block aspect-square w-full sm:w-[150px] sm:h-[150px] md:w-[200px] md:h-[200px] lg:w-[250px] lg:h-[250px] xl:w-[300px] xl:h-[300px]'
     >
       <motion.div
         variants={colorBoxMotion}
@@ -41,7 +40,13 @@ const ProjectCard = ({ id, logo, category, name, color }: Props) => {
         <div className='absolute inset-0 m-auto z-20 flex items-center justify-center flex-col'>
           {logo ? (
             <div className='relative w-4/6 h-[60px]'>
-              <Image alt={logo} src={logo} layout='fill' objectFit='contain' />
+              <Image
+                alt={logo}
+                src={logo}
+                fill
+                sizes='180px'
+                className='object-contain'
+              />
             </div>
           ) : (
             <div className='mt-3 w-full text-center xl:text-3xl lg:text-2xl md:text-xl text-sm font-semibold'>
